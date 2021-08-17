@@ -16,4 +16,11 @@ class classes extends Model
     {
         return $this->belongsTo('App\Models\level', 'level_id');
     }
+
+
+    public function subjects()
+    {
+
+        return $this->belongsToMany('App\Models\subject', 'class_subjects');
+    }
 }

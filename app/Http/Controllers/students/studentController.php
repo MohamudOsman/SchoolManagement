@@ -113,7 +113,6 @@ class studentController extends Controller
         return redirect()->route('Student.index');
     }
 
-
     public function search(Request $request)
     {
         return $request;

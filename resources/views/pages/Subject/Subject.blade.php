@@ -111,12 +111,21 @@
                                     <label for="name"
                                            class="mr-sm-2">Max mark
                                         :</label>
-                                    <input id="name" type="number" name="max_mark" class="form-control" required>
+                                    <input id="name" type="number" name="max_mark" class="form-control"  value="{{ $subject->max_mark }}"required>
                                      <label for="name"
                                            class="mr-sm-2">Min mark
                                         :</label>
-                                    <input id="name" type="number" name="min_mark" class="form-control" required>
+                                    <input id="name" type="number" name="min_mark" class="form-control" value="{{ $subject->min_mark }}" required>
                                 </div>
+                            </div>
+                             <div class="col">
+                               <label for="inputName" class="control-label">class name</label>
+                                  <select multiple name="class_id[]" class="form-control"
+                                  id="exampleFormControlSelect2" required>
+                                      @foreach($classes as $class)
+                                         <option value="{{$class->id}}"><p>{{$class->name}}</p><p>/{{$class->Levels->name}}</p></option>
+                                    @endforeach
+                                 </select>
                             </div>
 
                                           <div class="form-group">
@@ -233,6 +242,14 @@
                                         :</label>
                                     <input id="name" type="number" name="min_mark" class="form-control" required>
                                 </div>
+                            </div>
+                                <div class="col">
+                               <label for="inputName" class="control-label">Classes</label>
+                                  <select multiple name="class_id[]" class="form-control" id="exampleFormControlSelect2">
+                                      @foreach($classes as $class)
+                                         <option value="{{$class->id}}"><p>{{$class->name}}</p><p>/{{$class->Levels->name}}</p></option>
+                                    @endforeach
+                                 </select>
                             </div>
                             <div class="form-group">
                                 <label

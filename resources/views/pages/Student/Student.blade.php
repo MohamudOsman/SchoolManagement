@@ -34,9 +34,6 @@
                         Add Student
                     </button>
 
-                     <button type="button" class="button x-small" data-toggle="modal" data-target="{{ route('Student.search')}}">
-                        Search for a student
-                    </button>
 
                     <br><br>
 
@@ -135,7 +132,8 @@
                                                 <select class="fancyselect" name="class_id" required>
                                                      <option value="{{ $student->class_id }}"></option>
                                                     @foreach ($classes as $class)
-                                                        <option value="{{ $class->id }}" >  {{ $class->name }}</option>
+                                                        <option value="{{ $class->id }}" > <p> {{ $class->name }} </p>
+                                                           <p>/ {{$class->Levels->name }}</p></option>
                                                     @endforeach
                                                 </select>
                                 </div>
@@ -286,7 +284,10 @@
                                                 <select class="fancyselect" name="class_id" required>
                                                      <option value=""></option>
                                                     @foreach ($classes as $class)
-                                                        <option value="{{ $class->id }}" >  {{ $class->name }}</option>
+                                                          <option value="{{ $class->id }}" >  <p>{{ $class->name }} </p>
+                                                        <p>/ {{$class->Levels->name }}
+                                                        </p>
+                                                          </option>
                                                     @endforeach
                                                 </select>
                                 </div>

@@ -7,13 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class subject extends Model
 {
 
-    protected $fillable = ['name', 'max_mark', 'min_mark', 'class_id', 'note'];
+    protected $fillable = ['name', 'max_mark', 'min_mark', 'note'];
     protected $table = 'subjects';
     public $timestamps = true;
 
 
-    public function Class()
+    public function class()
     {
-        return $this->belongsTo('App\Models\classes', 'class_id');
+
+        return $this->belongsToMany('App\Models\classes', 'class_subjects');
     }
 }

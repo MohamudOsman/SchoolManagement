@@ -133,7 +133,7 @@
                              <div class="col">
                                <label for="inputName" class="control-label">certificates</label>
                                   <select multiple name="certificate_id[]" class="form-control"
-                                  id="exampleFormControlSelect2">
+                                  id="exampleFormControlSelect2" required>
                                       @foreach($certificates as $certificate)
                                          <option value="{{$certificate->id}}">{{$certificate->name}}</option>
                                     @endforeach

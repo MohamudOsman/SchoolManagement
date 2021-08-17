@@ -15,7 +15,8 @@ class subjectController extends Controller
     public function index()
     {
         $subjects = subject::all();
-        return view('pages.Subject.Subject', compact('subjects'));
+        $classes = classes::all();
+        return view('pages.Subject.Subject', compact('subjects', 'classes'));
     }
 
     public function store(storeSubject $request)
@@ -26,9 +27,9 @@ class subjectController extends Controller
             $subject->name = $request->name;
             $subject->max_mark = $request->max_mark;
             $subject->min_mark = $request->min_mark;
-            $subject->class_id = $request->class_id;
             $subject->note = $request->note;
             $subject->save();
+            $subject->class()->attach($request->class_id);
             return redirect()->route('Subject.index');
         } catch (\Exception $e) {
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
@@ -40,13 +41,16 @@ class subjectController extends Controller
 
         try {
             $subject = subject::findorfail($request->id);
-            $subject->update([
-                $subject->name = $request->name,
-                $subject->max_mark = $request->max_mark,
-                $subject->min_mark = $request->min_mark,
-                $subject->class_id = $request->class_id,
-                $subject->note = $request->note,
-            ]);
+            $subject->name = $request->name;
+            $subject->max_mark = $request->max_mark;
+            $subject->min_mark = $request->min_mark;
+            $subject->note = $request->note;
+            $subject->save();
+            if (isset($request->class_id)) {
+                $subject->class()->sync($request->class_id);
+            } else {
+                $subject->class()->sync(array());
+            }
             return redirect()->route('Subject.index');
         } catch (\Exception $e) {
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);

@@ -243,7 +243,10 @@
                                                 <select class="fancyselect" name="class_id" required>
                                                      <option value=""></option>
                                                     @foreach ($classes as $class)
-                                                        <option value="{{ $class->id }}" >  {{ $class->name }}</option>
+                                                        <option value="{{ $class->id }}" >
+                                                          <p> {{ $class->name }} </p>
+                                                           <p>/ {{$class->Levels->name }}</p>
+                                                    </option>
                                                     @endforeach
                                                 </select>
                                             </div>
