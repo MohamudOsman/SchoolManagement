@@ -76,10 +76,14 @@
             @yield('content')
         </main>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <p>ghadeer amer </p>
 =======
     <p>v1</p>
 >>>>>>> 8d091b5e2e2822d18b2e3244d4ceb669e4be2aec
+=======
+
+>>>>>>> parent of 991dd7e (test11)
     </div>
 </body>
 </html>
