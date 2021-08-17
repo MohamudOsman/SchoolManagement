@@ -75,7 +75,7 @@
         <main class="py-4">
             @yield('content')
         </main>
-
+<p>ghadeer amer </p>
     </div>
 </body>
 </html>
