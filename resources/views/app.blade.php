@@ -75,7 +75,11 @@
         <main class="py-4">
             @yield('content')
         </main>
+<<<<<<< HEAD
 <p>ghadeer amer </p>
+=======
+    <p>v1</p>
+>>>>>>> 8d091b5e2e2822d18b2e3244d4ceb669e4be2aec
     </div>
 </body>
 </html>
