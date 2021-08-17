@@ -76,7 +76,7 @@
                                     </td>
                                 </tr>
 
-
+                                <!--    modal edit teacher   -->
                            <div class="modal fade" id="edit{{ $teacher->id }}" tabindex="-1" role="dialog"
                                  aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
@@ -132,7 +132,8 @@
                             </div>
                              <div class="col">
                                <label for="inputName" class="control-label">certificates</label>
-                                  <select multiple name="certificate_id[]" class="form-control" id="exampleFormControlSelect2">
+                                  <select multiple name="certificate_id[]" class="form-control"
+                                  id="exampleFormControlSelect2">
                                       @foreach($certificates as $certificate)
                                          <option value="{{$certificate->id}}">{{$certificate->name}}</option>
                                     @endforeach

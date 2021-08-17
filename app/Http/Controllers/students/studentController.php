@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Hash;
 class studentController extends Controller
 {
 
+
     public function index()
     {
         $students = student::all();
@@ -21,6 +22,8 @@ class studentController extends Controller
         $sections = sections::all();
         return view('pages.Student.Student', compact('students', 'classes', 'sections'));
     }
+
+
 
     public function store(Request $request)
     {
@@ -80,7 +83,22 @@ class studentController extends Controller
     {
 
         try {
-
+            $student = student::findorfail($request->id);
+            $student->update([
+                $student->name = $request->name,
+                $student->date_of_birth = $request->date_of_birth,
+                $student->phone = $request->phone,
+                $student->class_id = $request->class_id,
+                $student->section_id = $request->section_id,
+                $student->gender = $request->gender,
+            ]);
+            $parent = my_parent::findorfail($request->my_parent_id);
+            $parent->update([
+                $parent->father_name = $request->father_name,
+                $parent->mother_name = $request->mother_name,
+                $parent->father_phone = $request->father_phone,
+                $parent->mother_phone = $request->mother_phone,
+            ]);
             return redirect()->route('Student.index');
         } catch (\Exception $e) {
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
@@ -93,5 +111,20 @@ class studentController extends Controller
 
         $student = student::findOrFail($request->id)->delete();
         return redirect()->route('Student.index');
+    }
+
+
+    public function search(Request $request)
+    {
+        return $request;
+        try {
+            $name = $request->name;
+            $students = student::where('name', 'like', $name)->get();
+            $classes = classes::all();
+            $sections = sections::all();
+            return view('pages.Student.Student', compact('students', 'classes', 'sections'));
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
     }
 }
