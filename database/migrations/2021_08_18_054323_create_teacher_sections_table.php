@@ -22,7 +22,7 @@ class CreateTeacherSectionsTable extends Migration
             $table->unsignedInteger('subject_id');
             $table->foreign('subject_id')->references('id')->on('subjects');
             $table->unsignedInteger('classes_id');
-            $table->foreign('classes')->references('id')->on('classes');
+            $table->foreign('classes_id')->references('id')->on('classes');
         });
     }
 
