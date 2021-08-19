@@ -33,6 +33,7 @@
                         <div class="col-md-10">
                             <br>
                             <form action="{{route('Teacher.store')}}" method="post">
+
                              @csrf
                             <div class="form-row">
                                 <div class="col">

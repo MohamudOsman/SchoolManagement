@@ -29,6 +29,6 @@ class teacher extends Model
     }
     public function subject()
     {
-        return $this->belongsToMany('App\Models\subjects', 'teacher_subject');
+        return $this->belongsToMany('App\Models\subject', 'teacher_subjects');
     }
 }
