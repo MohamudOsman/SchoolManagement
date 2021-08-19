@@ -46,7 +46,8 @@
              Teacher
             </button>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="{{route('Teacher.index')}}">view teachers recode  <i class="fa fa-user-plus ml-2"></i> </a>
+              <a class="dropdown-item" href="{{route('Teacher.index')}}">view teachers record  <i class="fa fa-user-plus ml-2"></i> </a>
+            <a class="dropdown-item" href="{{route('Teacher.create')}}">assigning  teachers to classes  <i class="fa fa-user-plus ml-2"></i> </a>
 
             </div>
           </div>
@@ -58,7 +59,7 @@
                 Student
             </button>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="{{route('Student.index')}}">view students recode <i class="fa fa-user-plus ml-2"></i> </a>
+              <a class="dropdown-item" href="{{route('Student.index')}}">view students record<i class="fa fa-user-plus ml-2"></i> </a>
             </div>
           </div>
         </li>

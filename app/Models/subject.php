@@ -17,4 +17,14 @@ class subject extends Model
 
         return $this->belongsToMany('App\Models\classes', 'class_subjects');
     }
+
+    public function Teacher()
+    {
+        return $this->belongsToMany('App\Models\teacher', 'teacher_sections');
+    }
+
+    public function section()
+    {
+        return $this->belongsToMany('App\Models\sections', 'teacher_sections');
+    }
 }

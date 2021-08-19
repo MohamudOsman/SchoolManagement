@@ -5,6 +5,9 @@ namespace App\Http\Controllers\teachers;
 use App\Models\teacher;
 use App\Models\certificate;
 use App\Models\User;
+use App\Models\subject;
+use App\Models\sections;
+use App\Models\classes;
 use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -79,5 +82,30 @@ class teacherController extends Controller
 
         $teacher = teacher::findOrFail($request->id)->delete();
         return redirect()->route('Teacher.index');
+    }
+
+    public function create()
+    {
+        $teachers = teacher::all();
+        $sections = sections::all();
+        $subjects = subject::all();
+        $classes = classes::all();
+        return view('pages.Teacher.assigning', compact('teachers', 'sections', 'subjects', 'classes'));
+    }
+
+
+    public function show(Request $request)
+    {
+
+
+        try {
+            $teacher = teacher::findorfail($request->teacher_id);
+            $teacher->section()->attach($request->section_id);
+            $teacher->classes()->attach($request->classes_id);
+            $teacher->subject()->attach($request->subject_id);
+            return view('empty');
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
     }
 }

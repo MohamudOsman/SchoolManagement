@@ -23,4 +23,9 @@ class classes extends Model
 
         return $this->belongsToMany('App\Models\subject', 'class_subjects');
     }
+
+    public function teachers()
+    {
+        return $this->belongsToMany('App\Models\teacher', 'teacher_sections');
+    }
 }

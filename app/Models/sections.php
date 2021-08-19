@@ -15,4 +15,15 @@ class sections extends Model
     {
         return $this->belongsTo('App\Models\classes', 'class_id');
     }
+
+
+    public function teachers()
+    {
+        return $this->belongsToMany('App\Models\teacher', 'teacher_sections');
+    }
+
+    public function subject()
+    {
+        return $this->belongsToMany('App\Models\subjects', 'teacher_sections');
+    }
 }

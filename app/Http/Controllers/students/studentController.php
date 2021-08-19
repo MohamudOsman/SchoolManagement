@@ -59,17 +59,17 @@ class studentController extends Controller
 
             //student's record
             $student->name = $request->name;
-            $email = $request->parent_email;
-            $my_parent = my_parent::where('parent_email', 'like', $email)->get();
-            $student->my_parent_id = $my_parent[0]->id;
+            $emails = $request->parent_email;
+            $my_parents = my_parent::where('parent_email', 'like', $emails)->get();
+            $student->my_parent_id = $my_parents[0]->id;
             $student->class_id = $request->class_id;
             $student->section_id = $request->section_id;
             $student->gender = $request->gender;
             $student->date_of_birth = $request->date_of_birth;
             $student->phone = $request->phone;
             $student->email = $request->email;
-            $email = $request->email;
-            $users = User::where('email', 'like', $email)->get();
+            $emai = $request->email;
+            $users = User::where('email', 'like', $emai)->get();
             $student->user_id = $users[0]->id;
             $student->save();
 
@@ -77,6 +77,14 @@ class studentController extends Controller
         } catch (\Exception $e) {
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
+    }
+
+    public function edit($id)
+    {
+        $student = student::findorfail($id);
+        $classes = classes::all();
+        $sections = sections::all();
+        return view('pages.Student.edit', compact('student', 'classes', 'sections'));
     }
 
     public function update(Request $request)
@@ -125,5 +133,13 @@ class studentController extends Controller
         } catch (\Exception $e) {
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
+    }
+
+    public function create()
+    {
+
+        $classes = classes::all();
+        $sections = sections::all();
+        return view('pages.Student.create', compact('classes', 'sections'));
     }
 }
