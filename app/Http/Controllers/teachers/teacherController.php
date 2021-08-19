@@ -19,7 +19,8 @@ class teacherController extends Controller
     {
         $teachers = teacher::all();
         $certificates = certificate::all();
-        return view('pages.Teacher.Teacher', compact('teachers', 'certificates'));
+        $subjects = subject::all();
+        return view('pages.Teacher.Teacher', compact('teachers', 'certificates', 'subjects'));
     }
 
     public function store(Request $request)
@@ -46,6 +47,7 @@ class teacherController extends Controller
 
             $teacher->save();
             $teacher->certificate()->attach($request->certificate_id);
+            $teacher->subject()->attach($request->subject_id);
             return redirect()->route('Teacher.index');
         } catch (\Exception $e) {
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
@@ -84,7 +86,7 @@ class teacherController extends Controller
         return redirect()->route('Teacher.index');
     }
 
-    public function create()
+    public function createt()
     {
         $teachers = teacher::all();
         $sections = sections::all();
@@ -107,5 +109,22 @@ class teacherController extends Controller
         } catch (\Exception $e) {
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
+    }
+
+
+
+    public function edit($id)
+    {
+        $teacher = teacher::findorfail($id);
+        $certificates = certificate::all();
+        $subjects = subject::all();
+        return view('pages.Teacher.edit', compact('teacher', 'certificates', 'subjects'));
+    }
+    public function create()
+    {
+
+        $certificates = certificate::all();
+        $subjects = subject::all();
+        return view('pages.Teacher.create', compact('certificates', 'subjects'));
     }
 }
