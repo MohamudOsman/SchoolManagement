@@ -46,8 +46,8 @@
              Teacher
             </button>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="{{route('Teacher.index')}}">view teachers record  <i class="fa fa-user-plus ml-2"></i> </a>
-            <a class="dropdown-item" href="{{route('Teacher.create')}}">assigning  teachers to classes  <i class="fa fa-user-plus ml-2"></i> </a>
+              <a class="dropdown-item" href="{{route('Teacher.index')}} " style="color:black">view teachers record  <i class="fa fa-user-plus ml-2"></i> </a>
+            <a class="dropdown-item" href="{{route('Teacher.create')}}" style="color:black">assigning  teachers to classes  <i class="fa fa-user-plus ml-2"></i> </a>
 
             </div>
           </div>
@@ -59,7 +59,7 @@
                 Student
             </button>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="{{route('Student.index')}}">view students record<i class="fa fa-user-plus ml-2"></i> </a>
+              <a class="dropdown-item" href="{{route('Student.index')}}" style="color:black">view students record<i class="fa fa-user-plus ml-2"></i> </a>
             </div>
           </div>
         </li>
@@ -70,9 +70,9 @@
             Staff
             </button>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#add_staff">add staff   <i class="fa fa-user-plus ml-2"></i> </a>
-              <a class="dropdown-item" href="#delete_staff"> delete staff  <i class="fa fa-user-minus ml-2"></i> </a>
-              <a class="dropdown-item" href="#">  view all staff <i class="fa fa-eye ml-2"></i> </a>
+              <a class="dropdown-item" href="#add_staff" style="color:black">add staff   <i class="fa fa-user-plus ml-2"></i> </a>
+              <a class="dropdown-item" href="#delete_staff" style="color:black"> delete staff  <i class="fa fa-user-minus ml-2"></i> </a>
+              <a class="dropdown-item" href="#" style="color:black">  view all staff <i class="fa fa-eye ml-2"></i> </a>
             </div>
           </div>
         </li>
@@ -83,11 +83,11 @@
               الاعلانات
             </button>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">اعلان لجميع الطلاب  </a>
-              <a class="dropdown-item" href="#">اعلان لطالب معين  </a>
-              <a class="dropdown-item" href="#">اعلانات للعامة وحفلات تكريم الطلاب </a>
-              <a class="dropdown-item" href="#">اعلان الى مدرس معين  </a>
-              <a class="dropdown-item" href="#">اعلان الى جميع المدرسين   </a>
+              <a class="dropdown-item" href="#" style="color:black">اعلان لجميع الطلاب  </a>
+              <a class="dropdown-item" href="#" style="color:black">اعلان لطالب معين  </a>
+              <a class="dropdown-item" href="#" style="color:black">اعلانات للعامة وحفلات تكريم الطلاب </a>
+              <a class="dropdown-item" href="#" style="color:black">اعلان الى مدرس معين  </a>
+              <a class="dropdown-item" href="#" style="color:black">اعلان الى جميع المدرسين   </a>
             </div>
           </div>
         </li>
