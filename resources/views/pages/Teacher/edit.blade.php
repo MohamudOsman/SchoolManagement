@@ -64,6 +64,11 @@
                                    <label for="name"  class="mr-sm-2">email :</label>
                                     <input id="name" type="email" name="email" class="form-control" value="{{ $teacher->email }}"  required>
                                 </div>
+
+                                <div class="col">
+                                   <label for="name"   class="mr-sm-2">password :</label>
+                                    <input id="name" type="password" name="password" class="form-control" >
+                                </div>
                             </div>
                             <br>
 

@@ -70,9 +70,37 @@
                                 </div>
                             </div>
                             <br>
+
+                             <div class="form-row">
+                                <div class="col">
+                                    <label for="title">parent email</label>
+                                    <input type="email" name="parent_email" class="form-control" value="{{$student->parent->parent_email}}" required>
+                                </div>
+                                <div class="col">
+                                    <label for="title">parent Password</label>
+                                    <input type="password" name="parent_Password" class="form-control"  >
+                                </div>
+                            </div>
+                            <br>
+
                             <input id="id" type="hidden" name="id" class="form-control"  value="{{ $student->id }}">
                             <input id="id" type="hidden" name="my_parent_id" class="form-control"  value="{{ $student->my_parent_id }}">
+                            <input id="id" type="hidden" name="user_id" class="form-control"  value="{{ $student->user_id }}">
+                            <input id="id" type="hidden" name="parent_user_id" class="form-control"  value="{{ $student->parent->user_id }}">
 
+
+
+                             <div class="form-row">
+                                <div class="col">
+                                    <label for="title">student email</label>
+                                    <input type="email" name="email" class="form-control" value="{{$student->email}}" required>
+                                </div>
+                                <div class="col">
+                                    <label for="title">student Password</label>
+                                    <input type="password" name="Password" class="form-control"  >
+                                </div>
+                            </div>
+                            <br>
 
 
                             <div class="form-row">

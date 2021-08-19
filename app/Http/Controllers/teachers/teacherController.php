@@ -65,9 +65,21 @@ class teacherController extends Controller
             $teacher->email = $request->email;
             $teacher->gender = $request->gender;
             $teacher->date_of_birth = $request->date_of_birth;
+            if (isset($request->password)) {
+                $user = User::findorfail($request->user_id);
+                $user->password = $request->password;
+            }
+
 
             if (isset($request->certificate_id)) {
                 $teacher->certificate()->sync($request->certificate_id);
+            } else {
+                $teacher->certificate()->sync(array());
+            }
+
+
+            if (isset($request->subject_id)) {
+                $teacher->certificate()->sync($request->subject_id);
             } else {
                 $teacher->certificate()->sync(array());
             }

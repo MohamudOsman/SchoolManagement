@@ -99,13 +99,31 @@ class studentController extends Controller
                 $student->class_id = $request->class_id,
                 $student->section_id = $request->section_id,
                 $student->gender = $request->gender,
+                $student->email = $request->email,
             ]);
+
+            if (isset($request->password)) {
+
+                $user = User::findorfail($request->user_id);
+                $user->update([
+                    $user->password = $request->password,
+                ]);
+            }
+
+            if (isset($request->parent_Password)) {
+
+                $parent_user = User::findorfail($request->parent_user_id);
+                $parent_user->update([
+                    $user->password = $request->parent_Password,
+                ]);
+            }
             $parent = my_parent::findorfail($request->my_parent_id);
             $parent->update([
                 $parent->father_name = $request->father_name,
                 $parent->mother_name = $request->mother_name,
                 $parent->father_phone = $request->father_phone,
                 $parent->mother_phone = $request->mother_phone,
+                $parent->parent_email = $request->parent_email,
             ]);
             return redirect()->route('Student.index');
         } catch (\Exception $e) {
