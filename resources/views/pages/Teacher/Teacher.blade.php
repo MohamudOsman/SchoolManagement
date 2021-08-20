@@ -66,7 +66,7 @@
                                     <td>{{$teacher->Address}}</td>
                                     <td>
                                         <a href="{{route('Teacher.edit', $teacher->id)}}"
-                                                        class="btn btn-info btn-sm" role="button" aria-pressed="true">
+                                                        class="btn btn-primary mb-1" role="button" aria-pressed="true">
                                                         <i class="fa fa-edit"></i></a>
                                         <button type="button"  class="btn btn-danger mb-1" data-toggle="modal"
                                                 data-target="#delete{{ $teacher->id }}"
