@@ -30,7 +30,7 @@
                         </div>
                     @endif
 
-                <a href="{{route('Student.create')}}" class="btn btn-success btn-sm" role="button"
+                <a href="{{route('Student.create')}}" class="button x-small" role="button"
                                    aria-pressed="true">Add Student</a><br>
 
                     <br><br>
