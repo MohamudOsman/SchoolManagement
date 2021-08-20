@@ -47,7 +47,7 @@
             </button>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="{{route('Teacher.index')}} " style="color:black">view teachers record  <i class="fa fa-user-plus ml-2"></i> </a>
-            <a class="dropdown-item" href="{{route('Teacher.create')}}" style="color:black">assigning  teachers to classes  <i class="fa fa-user-plus ml-2"></i> </a>
+            <a class="dropdown-item" href="{{url('assigning')}}" style="color:black">assigning  teachers to classes  <i class="fa fa-user-plus ml-2"></i> </a>
 
             </div>
           </div>

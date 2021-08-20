@@ -98,17 +98,17 @@ class teacherController extends Controller
         return redirect()->route('Teacher.index');
     }
 
-    public function createt()
+    public function assigning()
     {
         $teachers = teacher::all();
         $sections = sections::all();
         $subjects = subject::all();
         $classes = classes::all();
-        return view('pages.Teacher.assigning', compact('teachers', 'sections', 'subjects', 'classes'));
+        return view('pages.Teacher.Assigning', compact('teachers', 'sections', 'subjects', 'classes'));
     }
 
 
-    public function show(Request $request)
+    public function save_assigning(Request $request)
     {
 
 
