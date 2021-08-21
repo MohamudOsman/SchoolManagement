@@ -30,7 +30,7 @@
                         </div>
                     @endif
 
-                <a href="{{route('Student.create')}}" class="btn btn-success btn-sm" role="button"
+                <a href="{{route('Student.create')}}" class="button x-small" role="button"
                                    aria-pressed="true">Add Student</a><br>
 
                     <br><br>
@@ -73,7 +73,7 @@
                                     <td>{{$student->sections->name}}</td>
                                     <td>
                                         <a href="{{route('Student.edit', $student->id)}}"
-                                                        class="btn btn-info btn-sm" role="button" aria-pressed="true">
+                                                        class="btn btn-primary mb-1" role="button" aria-pressed="true">
                                                         <i class="fa fa-edit"></i></a>
                                         <button type="button"  class="btn btn-danger mb-1" data-toggle="modal"
                                                 data-target="#delete{{ $student->id }}"
