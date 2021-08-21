@@ -42,3 +42,9 @@ Route::group(['namespace' => 'Teachers'], function () {
 Route::group(['namespace' => 'Students'], function () {
     Route::resource('Student', 'studentController');
 });
+
+
+
+Route::group(['namespace' => 'Exams'], function () {
+    Route::resource('Exam', 'examController');
+});

@@ -139,12 +139,24 @@ class studentController extends Controller
         return redirect()->route('Student.index');
     }
 
-    public function search(Request $request)
+    public function searchByName(Request $request)
     {
         return $request;
         try {
             $name = $request->name;
             $students = student::where('name', 'like', $name)->get();
+            $classes = classes::all();
+            $sections = sections::all();
+            return view('pages.Student.Student', compact('students', 'classes', 'sections'));
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
+    }
+
+    public function searchById($id)
+    {
+        try {
+            $students = student::where('$id', $id)->get();
             $classes = classes::all();
             $sections = sections::all();
             return view('pages.Student.Student', compact('students', 'classes', 'sections'));

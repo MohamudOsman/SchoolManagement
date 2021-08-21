@@ -16,7 +16,7 @@ class CreateStaffCertificatesTable extends Migration
         Schema::create('staff_certificates', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('staff_id');
-            $table->foreign('staff_id')->references('id')->on('staffs')->onDelete('cascade');
+            $table->foreign('staff_id')->references('id')->on('staff')->onDelete('cascade');
             $table->unsignedInteger('certificate_id');
             $table->foreign('certificate_id')->references('id')->on('certificates');
         });

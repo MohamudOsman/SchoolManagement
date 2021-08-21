@@ -9,7 +9,7 @@ use Illuminate\Routing\Controller;
 
 class levelController extends Controller
 {
-    // return all grades
+    // return all levels
 
     public function index()
     {
@@ -18,7 +18,7 @@ class levelController extends Controller
         return view('pages.Levels.Levels', compact('Levels'));
     }
 
-    // insert new grade to database
+    // insert new level to database
 
     public function store(StoreLevels $request)
     {

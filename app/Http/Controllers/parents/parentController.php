@@ -17,6 +17,7 @@ class teacherController extends Controller
         return view('pages.Parent.Parent', compact('parent'));
     }
 
+
     public function store(Request $request)
     {
         try {
