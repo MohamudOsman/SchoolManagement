@@ -17,6 +17,8 @@ class CreateSessionsTable extends Migration
             $table->increments('id');
             $table->integer('number');
             $table->integer('day');
+            $table->unsignedInteger('section_id');
+            $table->foreign('section_id')->references('id')->on('sections');
             $table->unsignedInteger('teacher_id');
             $table->foreign('teacher_id')->references('id')->on('teachers');
             $table->unsignedInteger('subject_id');
