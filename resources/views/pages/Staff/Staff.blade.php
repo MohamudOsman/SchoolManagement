@@ -2,13 +2,13 @@
 @section('css')
 
 @section('title')
-    Teachers
+    Staffs
 @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
 @section('PageTitle')
-    Teachers
+    Staffs
 @stop
 <!-- breadcrumb -->
 @endsection
@@ -30,8 +30,8 @@
                         </div>
                     @endif
 
-                <a href="{{route('Teacher.create')}}" class="button x-small" role="button"
-                                   aria-pressed="true">Add Teacher</a><br>
+                <a href="{{route('Staff.create')}}" class="button x-small" role="button"
+                                   aria-pressed="true">Add Staff</a><br>
 
                     <br><br>
 
@@ -53,21 +53,20 @@
                             </thead>
                             <tbody>
 
-
-                        @foreach ($teachers as $teacher)
+                        @foreach ($staffs as $staff)
                                 <tr>
-                                    <td>{{ $teacher->name }}</td>
-                                    <td>{{$teacher->phone}}</td>
-                                     <td>{{$teacher->email}}</td>
-                                     <td>{{$teacher->gender}}</td>
-                                    <td>{{ $teacher->date_of_birth }}</td>
-                                    <td>{{$teacher->Address}}</td>
+                                    <td>{{ $staff->name }}</td>
+                                    <td>{{$staff->phone}}</td>
+                                     <td>{{$staff->email}}</td>
+                                     <td>{{$staff->gender}}</td>
+                                    <td>{{ $staff->date_of_birth }}</td>
+                                    <td>{{$staff->Address}}</td>
                                     <td>
-                                        <a href="{{route('Teacher.edit', $teacher->id)}}"
+                                        <a href="{{route('Staff.edit', $staff->id)}}"
                                                         class="btn btn-primary mb-1" role="button" aria-pressed="true">
                                                         <i class="fa fa-edit"></i></a>
                                         <button type="button"  class="btn btn-danger mb-1" data-toggle="modal"
-                                                data-target="#delete{{ $teacher->id }}"
+                                                data-target="#delete{{ $staff->id }}"
                                                 title="Delete"><i
                                                 class="fa fa-trash"></i></button>
                                     </td>
@@ -79,15 +78,15 @@
 
 
 
-                                <!-- delete_modal_Teacher -->
-                                <div class="modal fade" id="delete{{ $teacher->id }}" tabindex="-1" role="dialog"
+                                <!-- delete_modal_staff -->
+                                <div class="modal fade" id="delete{{ $staff->id }}" tabindex="-1" role="dialog"
                                      aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title"
                                                     id="exampleModalLabel">
-                                                    Delete Teacher's information
+                                                    Delete staff's information
                                                 </h5>
                                                 <button type="button" class="close" data-dismiss="modal"
                                                         aria-label="Close">
@@ -95,12 +94,12 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <form action="{{route('Teacher.destroy','test')}}" method="post">
+                                                <form action="{{route('Staff.destroy','test')}}" method="post">
                                                     {{method_field('Delete')}}
                                                     @csrf
-                                                    Are you sure you want to delete this teacher's information ???
+                                                    Are you sure you want to delete this staff's information ???
                                                     <input id="id" type="hidden" name="id" class="form-control"
-                                                           value="{{ $teacher->id }}">
+                                                           value="{{ $staff->id }}">
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary"
                                                                 data-dismiss="modal">Close</button>

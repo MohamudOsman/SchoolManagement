@@ -8,7 +8,7 @@ class staff extends Model
 {
 
     protected $fillable = ['name', 'user_id', 'phone', 'email', 'gender',  'date_of_birth', 'Address'];
-    protected $table = 'staffs';
+    protected $table = 'staff';
 
 
     public function certificate()

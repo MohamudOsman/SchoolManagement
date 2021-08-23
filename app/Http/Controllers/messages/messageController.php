@@ -4,6 +4,8 @@ namespace App\Http\Controllers\messages;
 
 use App\Http\Requests\storeMessage;
 use App\Models\message;
+use App\Models\level;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
@@ -12,7 +14,9 @@ class messageController extends Controller
     public function index()
     {
 
-        return view('', compact(''));
+        $Levels = level::all()->sortBy('name');
+        $messages = message::all();
+        return view('pages.Messages.Messages', compact('Levels', 'messages'));
     }
 
     // insert new level to database

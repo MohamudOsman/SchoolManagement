@@ -2,13 +2,13 @@
 @section('css')
 
 @section('title')
-    Levels
+    Messages
 @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
 @section('PageTitle')
-    Levels
+    Messages
 @stop
 <!-- breadcrumb -->
 @endsection
@@ -31,7 +31,7 @@
                     @endif
 
                     <button type="button" class="button x-small" data-toggle="modal" data-target="#exampleModal">
-                        Add Level
+                      send
                     </button>
                     <br><br>
 
@@ -42,19 +42,19 @@
                         <table class="table table-bordered">
                             <thead class="bg-secondary">
                             <tr>
-                                <th>Level name</th>
-                                <th>Note</th>
+                                <th>Messages</th>
+                                <th> From</th>
                                 <th>Processes</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach ($Levels as $level)
+                            @foreach ($messages as $message)
                                 <tr>
-                                    <td>{{ $level->name }}</td>
-                                    <td>{{ $level->note }}</td>
+                                    <td>{{ $message->message }}</td>
+                                    <td>{{ $message->from }}</td>
                                     <td>
                                         <button type="button"  class="btn btn-primary mb-1" data-toggle="modal"
-                                                data-target="#edit{{ $level->id }}"
+                                                data-target="#edit{{ $message->id }}"
                                                 title="Edit"><i
                                                 class="fa fa-edit"></i></button>
 
@@ -122,46 +122,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-
-
-
-
-                                <!-- delete_modal_Grade -->
-                                <div class="modal fade" id="delete{{ $level->id }}" tabindex="-1" role="dialog"
-                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title"
-                                                    id="exampleModalLabel">
-                                                    Delete Grade
-                                                </h5>
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <form action="{{route('Levels.destroy','test')}}" method="post">
-                                                    {{method_field('Delete')}}
-                                                    @csrf
-                                                    Are you sure you want to delete this Level ???
-                                                    <input id="id" type="hidden" name="id" class="form-control"
-                                                           value="{{ $level->id }}">
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary"
-                                                                data-dismiss="modal">Close</button>
-                                                        <button type="submit"
-                                                                class="btn btn-danger">Delete</button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
                             @endforeach
                         </table>
 
@@ -171,7 +131,7 @@
             </div>
 
 
-  <!-- add_modal_Grade -->
+  <!-- add_modal_Message -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
              aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -179,7 +139,7 @@
                     <div class="modal-header">
                         <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title"
                             id="exampleModalLabel">
-                            Add level
+                          Send Messages
                         </h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
@@ -187,22 +147,22 @@
                     </div>
                     <div class="modal-body">
                         <!-- add_form -->
-                        <form action="{{ route('Levels.store') }}" method="POST">
+                        <form action="{{ route('Message.store') }}" method="POST">
                             @csrf
                             <div class="row">
                                 <div class="col">
                                     <label for="name"
-                                           class="mr-sm-2">Name
+                                           class="mr-sm-2">to
                                         :</label>
-                                    <input id="name" type="text" name="name" class="form-control" required>
+                                    <input id="name" type="text" name="to" class="form-control" >
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label
-                                    for="exampleFormControlTextarea1">Notes
+                                    for="exampleFormControlTextarea1">Message
                                     :</label>
                                 <textarea class="form-control" name="note" id="exampleFormControlTextarea1"
-                                          rows="3"></textarea>
+                                          rows="4"></textarea>
                             </div>
                             <br><br>
                     </div>
@@ -210,7 +170,7 @@
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close</button>
                         <button type="submit"
-                                class="btn btn-success">submit</button>
+                                class="btn btn-success">send</button>
                     </div>
                     </form>
 

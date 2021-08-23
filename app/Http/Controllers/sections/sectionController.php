@@ -13,8 +13,8 @@ class sectionController extends Controller
 
     public function index()
     {
-        $classes = classes::all();
-        $sections = sections::all();
+        $classes = classes::all()->sortBy('name');
+        $sections = sections::all()->sortBy('name');
         return view('pages.Section.Section', compact('classes', 'sections'));
     }
 

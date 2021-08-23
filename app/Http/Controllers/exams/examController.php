@@ -16,9 +16,9 @@ class examController extends Controller
     public function index()
     {
 
-        $exams = exam::all();
-        $classes = classes::all();
-        $subjects = subject::all();
+        $exams = exam::all()->sortBy('name');
+        $classes = classes::all()->sortBy('name');
+        $subjects = subject::all()->sortBy('name');
         return view('pages.Exams.Exams', compact('exams', 'classes', 'subjects'));
     }
 
@@ -72,8 +72,8 @@ class examController extends Controller
     public function searchByClass($id)
     {
         $exams = exam::where('classes_id', $id)->get();
-        $classes = classes::all();
-        $subjects = subject::all();
+        $classes = classes::all()->sortBy('name');
+        $subjects = subject::all()->sortBy('name');
         return view('pages.Exams.Exams', compact('exams', 'classes', 'subjects'));
     }
 }

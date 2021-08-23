@@ -5,10 +5,11 @@
             <div class="scrollbar side-menu-bg" >
          <ul class="nav navbar-nav side-menu" id="sidebarnav">
         <li class="nav-item h2 text-center text-white mt-3 mb-5 border-bottom pb-3 ">
-            User Id
+
+            Admin
         </li>
 
-        <li class="nav-item border-bottom pb-2">
+        <li class="nav-item border-bottom pb-2 pt-2">
 
           <a type="button" href="{{route('Levels.index')}}" class="btn btn-primary btn-block ">
             Levels
@@ -17,7 +18,7 @@
         </li>
 
 
-        <li class="nav-item border-bottom pb-2">
+        <li class="nav-item border-bottom pb-2 pt-2">
 
           <a type="button" href="{{route('Class.index')}}" class="btn btn-primary btn-block ">
             Class
@@ -25,7 +26,7 @@
 
         </li>
 
-           <li class="nav-item border-bottom pb-2">
+           <li class="nav-item border-bottom pb-2 pt-2">
 
           <a type="button" href="{{route('Section.index')}}" class="btn btn-primary btn-block ">
             Section
@@ -34,7 +35,7 @@
         </li>
 
 
-        <li class="nav-item border-bottom pb-2">
+        <li class="nav-item border-bottom pb-2 pt-2">
      <a type="button" href="{{route('Subject.index')}}" class="btn btn-primary btn-block">
          Subject
      </a>
@@ -53,6 +54,19 @@
           </div>
         </li>
 
+
+
+        <li class="nav-item border-bottom pb-2 pt-2">
+          <div class="dropdown">
+            <button type="button" class="btn btn-primary btn-block dropdown-toggle" data-toggle="dropdown">
+            Staff
+            </button>
+            <div class="dropdown-menu">
+                   <a class="dropdown-item" href="{{route('Staff.index')}} " style="color:black">view staffs record  <i class="fa fa-user-plus ml-2"></i> </a>
+            </div>
+          </div>
+        </li>
+
         <li class="nav-item border-bottom pb-2 pt-2">
           <div class="dropdown">
             <button type="button" class="btn btn-primary btn-block dropdown-toggle" data-toggle="dropdown">
@@ -65,7 +79,7 @@
         </li>
 
 
-        <li class="nav-item border-bottom pb-2">
+        <li class="nav-item border-bottom pb-2 pt-2">
 
           <a type="button" href="{{route('Exam.index')}}" class="btn btn-primary btn-block ">
             Exams
@@ -73,32 +87,13 @@
 
         </li>
 
-        <li class="nav-item border-bottom pb-2 pt-2">
-          <div class="dropdown">
-            <button type="button" class="btn btn-primary btn-block dropdown-toggle" data-toggle="dropdown">
-            Staff
-            </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#add_staff" style="color:black">add staff   <i class="fa fa-user-plus ml-2"></i> </a>
-              <a class="dropdown-item" href="#delete_staff" style="color:black"> delete staff  <i class="fa fa-user-minus ml-2"></i> </a>
-              <a class="dropdown-item" href="#" style="color:black">  view all staff <i class="fa fa-eye ml-2"></i> </a>
-            </div>
-          </div>
-        </li>
 
-        <li class="nav-item pb-2 pt-2 border-bottom">
-          <div class="dropdown">
-            <button type="button" class="btn btn-primary btn-block dropdown-toggle" data-toggle="dropdown">
-              الاعلانات
-            </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#" style="color:black">اعلان لجميع الطلاب  </a>
-              <a class="dropdown-item" href="#" style="color:black">اعلان لطالب معين  </a>
-              <a class="dropdown-item" href="#" style="color:black">اعلانات للعامة وحفلات تكريم الطلاب </a>
-              <a class="dropdown-item" href="#" style="color:black">اعلان الى مدرس معين  </a>
-              <a class="dropdown-item" href="#" style="color:black">اعلان الى جميع المدرسين   </a>
-            </div>
-          </div>
+        <li class="nav-item border-bottom pb-2 pt-2">
+
+          <a type="button" href="{{route('Message.index')}}" class="btn btn-primary btn-block ">
+            Message
+        </a>
+
         </li>
       </ul>
         </div>

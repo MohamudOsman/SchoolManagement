@@ -14,7 +14,7 @@ class levelController extends Controller
     public function index()
     {
 
-        $Levels = level::all();
+        $Levels = level::all()->sortBy('name');
         return view('pages.Levels.Levels', compact('Levels'));
     }
 

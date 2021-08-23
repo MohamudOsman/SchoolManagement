@@ -17,8 +17,8 @@ class staffController extends Controller
 
     public function index()
     {
-        $staffs = staff::all();
-        $certificates = certificate::all();
+        $staffs = staff::all()->sortBy('name');
+        $certificates = certificate::all()->sortBy('name');
         return view('pages.Staff.Staff', compact('staffs', 'certificates'));
     }
 
@@ -56,6 +56,7 @@ class staffController extends Controller
     {
 
         try {
+
             $staff = staff::findorfail($request->id);
             $staff->update([
                 $staff->name = $request->name,
@@ -75,9 +76,6 @@ class staffController extends Controller
                 $user = User::findorfail($request->user_id);
                 $user->password = $request->password;
             }
-
-
-
 
             return redirect()->route('Staff.index');
         } catch (\Exception $e) {
@@ -102,15 +100,15 @@ class staffController extends Controller
     public function edit($id)
     {
         $staff = staff::findorfail($id);
-        $certificates = certificate::all();
-        return view('pages.Teacher.edit', compact('teacher', 'certificates'));
+        $certificates = certificate::all()->sortBy('name');
+        return view('pages.Staff.edit', compact('staff', 'certificates'));
     }
 
 
     public function create()
     {
 
-        $certificates = certificate::all();
-        return view('pages.Teacher.create', compact('certificates'));
+        $certificates = certificate::all()->sortBy('name');
+        return view('pages.Staff.create', compact('certificates'));
     }
 }

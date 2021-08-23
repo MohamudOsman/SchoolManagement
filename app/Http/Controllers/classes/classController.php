@@ -13,8 +13,8 @@ class classController extends Controller
 
     public function index()
     {
-        $classes = classes::all();
-        $Levels = level::all();
+        $classes = classes::all()->sortBy('name');
+        $Levels = level::all()->sortBy('name');
         return view('pages.Class.Class', compact('classes', 'Levels'));
     }
 

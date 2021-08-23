@@ -2,13 +2,13 @@
 @section('css')
 
 @section('title')
-   Edit Teacher's information
+   Add Staff
 @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
 @section('PageTitle')
-    edit Teacher
+    Add Staff
 @stop
 <!-- breadcrumb -->
 @endsection
@@ -32,29 +32,28 @@
                     <div class="col-xs-10">
                         <div class="col-md-10">
                             <br>
-                            <form action="{{route('Teacher.update','teat')}}" method="post">
-                                 {{method_field('patch')}}
+                            <form action="{{route('Staff.store')}}" method="post">
+
                              @csrf
                             <div class="form-row">
                                 <div class="col">
-                                    <label for="name"  class="mr-sm-2">teacher's name :</label>
-                                    <input id="name" type="text" name="name" class="form-control" value="{{ $teacher->name }}" required>
-                                    <input id="id" type="hidden" name="id" class="form-control"  value="{{ $teacher->id }}">
+                                    <label for="name"  class="mr-sm-2">satff's name :</label>
+                                    <input id="name" type="text" name="name" class="form-control" required>
                                 </div>
                                  <div class="col">
                                     <label for="name" class="mr-sm-2">phone :</label>
-                                    <input id="name" type="number" name="phone" class="form-control" value="{{ $teacher->phone }}" required>
+                                    <input id="name" type="number" name="phone" class="form-control" required>
                                 </div>
                             </div>
                             <br>
                             <div class="form-row">
                                 <div class="col">
                                      <label for="name"   class="mr-sm-2">Address :</label>
-                                    <input id="name" type="text" name="Address"   value="{{ $teacher->Address }}"class="form-control" >
+                                    <input id="name" type="text" name="Address" class="form-control" >
                                 </div>
                                 <div class="col">
                                     <label for="name"  class="mr-sm-2">date_of_birth :</label>
-                                    <input id="name" type="date" name="date_of_birth" class="form-control" value="{{ $teacher->date_of_birth }}" required>
+                                    <input id="name" type="date" name="date_of_birth" class="form-control" required>
                                 </div>
                             </div>
                             <br>
@@ -62,9 +61,8 @@
                             <div class="form-row">
                                 <div class="col">
                                    <label for="name"  class="mr-sm-2">email :</label>
-                                    <input id="name" type="email" name="email" class="form-control" value="{{ $teacher->email }}"  required>
+                                    <input id="name" type="email" name="email" class="form-control" required>
                                 </div>
-
                                 <div class="col">
                                    <label for="name"   class="mr-sm-2">password :</label>
                                     <input id="name" type="password" name="password" class="form-control" >
@@ -81,14 +79,6 @@
                                         <select multiple name="certificate_id[]" class="form-control" id="exampleFormControlSelect2">
                                       @foreach($certificates as $certificate)
                                          <option value="{{$certificate->id}}">{{$certificate->name}}</option>
-                                    @endforeach
-                                 </select>
-                                </div>
-                                <div class="form-group col">
-                                    <label for="inputState">subjects</label>
-                                      <select multiple name="subject_id[]" class="form-control" id="exampleFormControlSelect2">
-                                      @foreach($subjects as $subject)
-                                         <option value="{{$subject->id}}">{{$subject->name}}</option>
                                     @endforeach
                                  </select>
                                 </div>
