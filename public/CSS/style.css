@@ -1,0 +1,32 @@
+div.container {
+    width: 80%;
+    border: 1px solid gray;
+background-color: gray;
+margin:auto;
+
+}
+
+header, footer {
+   padding: 10px;
+    color: white;
+    background-color: black;
+   
+    text-align: center;
+}
+
+nav {
+width: 160px;
+    float: left;
+    margin: 0;
+    padding: 10px;
+
+}
+
+
+article {
+    margin-left: 160px;
+    border-left: 1px solid darkgray;
+    padding: 10px;
+	
+    
+}
