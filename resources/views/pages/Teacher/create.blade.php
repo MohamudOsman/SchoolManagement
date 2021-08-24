@@ -1,17 +1,19 @@
 @extends('layouts.master')
 @section('css')
 
+@endsection
 @section('title')
    Add Teacher
 @stop
-@endsection
+
 @section('page-header')
     <!-- breadcrumb -->
+@endsection
 @section('PageTitle')
     Add Teacher
 @stop
 <!-- breadcrumb -->
-@endsection
+
 @section('content')
     <!-- row -->
     <div class="row">

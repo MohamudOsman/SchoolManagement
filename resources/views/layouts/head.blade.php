@@ -1,5 +1,5 @@
-<!-- Title -->
-<title>@yield("title")</title>
+
+
 
 <head>
     <meta charset="utf-8">
@@ -18,7 +18,8 @@
 
     <!--- Style css -->
     <link href="{{ URL::asset('assets/css/ltr.css') }}" rel="stylesheet">
-
+    <!-- Title -->
+    <title>@yield("title")</title>
 
 </head>
 

@@ -5,7 +5,7 @@
         <div class="col-md-10 " style="height: max-content;" >
             <div class="bg-dark text-light h4 text-center p-4 mt-2"
                  style="border-bottom-left-radius:50% ;border-bottom-right-radius: 50%; ">
-                School Mangement System
+                School Management System
             </div>
         </div>
 
