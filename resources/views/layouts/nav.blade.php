@@ -1,13 +1,4 @@
 
-<!DOCTYPE html>
-<html>
-<head>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <script src="{{ asset('js/app.js') }}" defer></script>
-</head>
-
-<body>
-
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
     <div class="container">
 
@@ -49,6 +40,8 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('admin.register') }}">{{ __('New Admin') }}</a>
+                            <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ route('admin.postlogout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -66,6 +59,3 @@
     </div>
 </nav>
 
-</body>
-
-</html>

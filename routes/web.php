@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/aa', function () {
-    return view('layouts.header');
+    return view('layouts.nav');
 });
 
 Route::group(['namespace'=>'Auth'],function() {

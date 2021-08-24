@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 
-
 @include('layouts.head')
 
 <body>
 
-@include('layouts.header')
-    <div class="wrapper" style="font-family: 'Cairo', sans-serif">
+@include('layouts.nav')
+
+<div class="wrapper" style="font-family: 'Cairo', sans-serif">
 
         <!--=================================
  preloader -->
