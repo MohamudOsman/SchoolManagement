@@ -139,4 +139,13 @@ class teacherController extends Controller
         $subjects = subject::all();
         return view('pages.Teacher.create', compact('certificates', 'subjects'));
     }
+
+    public function searchBySection($id)
+    {
+    }
+
+
+    public function searchByyear()
+    {
+    }
 }
