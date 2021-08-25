@@ -1,16 +1,12 @@
 @extends('layouts.master')
 @section('css')
 
+@endsection
 @section('title')
     empty
 @stop
-@endsection
+
 @section('page-header')
-
-
-
-
-
 
 
 
