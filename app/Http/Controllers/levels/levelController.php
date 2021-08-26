@@ -11,6 +11,13 @@ class levelController extends Controller
 {
     // return all levels
 
+    public function __construct()
+    {
+
+        $this->middleware('AdminAuth:admin');
+    }
+
+
     public function index()
     {
 

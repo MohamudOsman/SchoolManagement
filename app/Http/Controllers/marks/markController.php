@@ -6,6 +6,14 @@ use Illuminate\Routing\Controller;
 
 class markController extends Controller
 {
+
+    public function __construct()
+    {
+
+        $this->middleware(['AdminAuth:admin','TeacherAuth']);
+        $this->middleware(['StudentAuth','ParentsAuth'])->only('show');
+    }
+
     public function index()
     {
     }
@@ -23,4 +31,9 @@ class markController extends Controller
     public function destroy(Request $request)
     {
     }
+
+    public function show()
+    {
+    }
+
 }

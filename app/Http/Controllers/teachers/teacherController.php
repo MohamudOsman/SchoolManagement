@@ -18,8 +18,7 @@ class teacherController extends Controller
     public function __construct()
     {
 
-        //$this->middleware(['AdminAuth:admin','TeacherAuth']);
-
+        $this->middleware('AdminAuth:admin');
     }
 
     public function index()

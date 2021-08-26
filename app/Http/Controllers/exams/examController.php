@@ -13,6 +13,13 @@ class examController extends Controller
 {
     // return all exams
 
+    public function __construct()
+    {
+
+        $this->middleware('AdminAuth:admin');
+        $this->middleware(['StudentAuth','ParentsAuth','TeacherAuth'])->only(['show','searchByClass']);
+    }
+
     public function index()
     {
 

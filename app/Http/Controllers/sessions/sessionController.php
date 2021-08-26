@@ -16,8 +16,8 @@ class sessionController extends Controller
     public function __construct()
     {
 
-       // searchBySection // $this->middleware(['StudentAuth']);
-        //$this->middleware(['AdminAuth:admin','StudentAuth']);
+        $this->middleware('AdminAuth:admin');
+        $this->middleware(['StudentAuth','ParentsAuth','TeacherAuth'])->only(['searchBySection','searchByTeacher']);
     }
 
     public function index()

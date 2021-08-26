@@ -15,6 +15,13 @@ use Illuminate\Support\Facades\Hash;
 class staffController extends Controller
 {
 
+
+    public function __construct()
+    {
+
+        $this->middleware('AdminAuth:admin');
+    }
+
     public function index()
     {
         $staffs = staff::all()->sortBy('name');

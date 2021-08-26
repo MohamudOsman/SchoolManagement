@@ -14,7 +14,7 @@ class PromotionController extends Controller
     public function __construct()
     {
 
-        //$this->middleware('AdminAuth:admin');
+        $this->middleware('AdminAuth:admin');
     }
 
     public function index()

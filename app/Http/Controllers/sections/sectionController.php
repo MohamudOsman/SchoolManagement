@@ -11,6 +11,12 @@ use Illuminate\Http\Request;
 class sectionController extends Controller
 {
 
+    public function __construct()
+    {
+
+        $this->middleware('AdminAuth:admin');
+    }
+
     public function index()
     {
         $classes = classes::all()->sortBy('name');

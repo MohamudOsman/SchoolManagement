@@ -8,6 +8,12 @@ use App\Models\teacher;
 class AttendanceController extends Controller
 {
 
+    public function __construct()
+    {
+
+        $this->middleware(['AdminAuth:admin','GuidedAuth']);
+    }
+
     public function index()
     {
         $teachers = teacher::all();
