@@ -18,11 +18,11 @@ class CreateSessionsTable extends Migration
             $table->integer('number');
             $table->integer('day');
             $table->unsignedInteger('section_id');
-            $table->foreign('section_id')->references('id')->on('sections');
-            $table->unsignedInteger('teacher_id');
+            $table->foreign('section_id')->references('id')->on('sections')->onDelete('cascade');
+            $table->unsignedInteger('teacher_id')->nullable();
             $table->foreign('teacher_id')->references('id')->on('teachers');
             $table->unsignedInteger('subject_id');
-            $table->foreign('subject_id')->references('id')->on('subjects');
+            $table->foreign('subject_id')->references('id')->on('subjects')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -17,10 +17,10 @@ class CreateExamsTable extends Migration
             $table->increments('id');
 
             $table->unsignedInteger('subject_id');
-            $table->foreign('subject_id')->references('id')->on('subjects');
+            $table->foreign('subject_id')->references('id')->on('subjects')->onDelete('cascade');
 
             $table->unsignedInteger('classes_id');
-            $table->foreign('classes_id')->references('id')->on('classes');
+            $table->foreign('classes_id')->references('id')->on('classes')->onDelete('cascade');
 
             $table->integer('term');
             $table->date('date');

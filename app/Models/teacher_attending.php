@@ -10,7 +10,7 @@ class teacher_attending extends Model
         'teacher_id',
         'date',
         'status',
-        'not',
+        'note',
     ];
     protected $table = 'teacher_attendings';
 }

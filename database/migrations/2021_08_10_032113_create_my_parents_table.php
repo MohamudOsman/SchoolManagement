@@ -18,6 +18,7 @@ class CreateMyParentsTable extends Migration
             $table->string('father_name');
             $table->string('mother_name');
             $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('father_phone');
             $table->integer('mother_phone');
             $table->string('parent_email');

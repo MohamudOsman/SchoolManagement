@@ -20,7 +20,7 @@ class CreateStudentsTable extends Migration
             $table->unsignedInteger('my_parent_id');
             $table->foreign('my_parent_id')->references('id')->on('my_parents')->onDelete('cascade');
 
-            $table->unsignedInteger('class_id');
+            $table->unsignedInteger('class_id')->nullable();
             $table->foreign('class_id')->references('id')->on('classes');
 
             $table->unsignedInteger('section_id')->nullable();
@@ -33,6 +33,7 @@ class CreateStudentsTable extends Migration
             $table->date('date_of_birth');
             $table->integer('phone');
             $table->string('email');
+            $table->string('academic_year');
             $table->timestamps();
         });
     }

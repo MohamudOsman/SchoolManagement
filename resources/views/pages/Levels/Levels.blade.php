@@ -138,7 +138,7 @@
                                             <div class="modal-header">
                                                 <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title"
                                                     id="exampleModalLabel">
-                                                    Delete Grade
+                                                    Delete Level
                                                 </h5>
                                                 <button type="button" class="close" data-dismiss="modal"
                                                         aria-label="Close">

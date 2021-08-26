@@ -3,26 +3,26 @@
 namespace App\Http\Controllers\Students;
 
 use App\Http\Controllers\Controller;
+use App\Repository\AttendanceRepositoryInterface;
+use Illuminate\Http\Request;
+use App\Models\teacher;
 use App\Models\student;
-use App\Models\attending;
-use App\Models\session;
+use App\Models\teacher_attending;
 
 class AttendanceController extends Controller
 {
 
     public function index()
     {
-        $students = student::all();
-        $sessions = session::all();
-
-        return view('pages.Attendance.Sections', compact('students'));
+        $teachers = teacher::all();
+        return view('', compact('teachers'));
     }
 
     public function store($request)
     {
         try {
 
-            foreach ($request->attendences as $studentid => $attendence) {
+            foreach ($request->attendences as $teacherid => $attendence) {
 
                 if ($attendence == 1) {
                     $attendence_status = true;
@@ -31,8 +31,6 @@ class AttendanceController extends Controller
                 }
 
                 attending::create([
-                    'student_id' => $request->student_id,
-                    'session_id' => $request->session_id,
                     'teacher_id' => $request->teacher_id,
                     'date' => $request->date,
                     'status' => $attendence_status,

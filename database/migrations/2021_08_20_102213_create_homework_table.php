@@ -16,19 +16,16 @@ class CreateHomeworkTable extends Migration
         Schema::create('homework', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->unsignedInteger('student_id');
-            $table->foreign('student_id')->references('id')->on('students');
-
             $table->unsignedInteger('subject_id');
-            $table->foreign('subject_id')->references('id')->on('subjects');
+            $table->foreign('subject_id')->references('id')->on('subjects')->onDelete('cascade');
 
             $table->unsignedInteger('classes_id');
-            $table->foreign('classes_id')->references('id')->on('classes');
+            $table->foreign('classes_id')->references('id')->on('classes')->onDelete('cascade');
 
             $table->unsignedInteger('section_id');
-            $table->foreign('section_id')->references('id')->on('sections');
+            $table->foreign('section_id')->references('id')->on('sections')->onDelete('cascade');
 
-            $table->unsignedInteger('teacher_id');
+            $table->unsignedInteger('teacher_id')->nullable();
             $table->foreign('teacher_id')->references('id')->on('teachers');
 
             $table->date('date');

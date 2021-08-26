@@ -37,12 +37,14 @@ class studentController extends Controller
             $user->name = $request->name;
             $user->password = Hash::make($request->student_Password);
             $user->email = $request->email;
+            $user->user_type = 4;
             $user->save();
             //parent's account
             $parent_account = new  User();
             $parent_account->name = $request->father_name;
             $parent_account->password = Hash::make($request->parent_Password);
             $parent_account->email = $request->parent_email;
+            $parent_account->user_type = 3;
             $parent_account->save();
 
 
@@ -68,6 +70,7 @@ class studentController extends Controller
             $student->date_of_birth = $request->date_of_birth;
             $student->phone = $request->phone;
             $student->email = $request->email;
+            $students->academic_year = $request->academic_year;
             $emai = $request->email;
             $users = User::where('email', 'like', $emai)->get();
             $student->user_id = $users[0]->id;
@@ -100,6 +103,7 @@ class studentController extends Controller
                 $student->section_id = $request->section_id,
                 $student->gender = $request->gender,
                 $student->email = $request->email,
+                $students->academic_year = $request->academic_year,
             ]);
 
             if (isset($request->password)) {

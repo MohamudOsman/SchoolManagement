@@ -4,19 +4,28 @@ namespace App\Http\Controllers\messages;
 
 use App\Http\Requests\storeMessage;
 use App\Models\message;
-use App\Models\level;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class messageController extends Controller
 {
+    public function get_guard()
+    {
+        if (Auth::guard('admin')->check()) {
+            return 'admin';
+        } elseif (Auth::guard('user')->check()) {
+            return 'user';
+        }
+    }
+
     public function index()
     {
 
-        $Levels = level::all()->sortBy('name');
-        $messages = message::all();
-        return view('pages.Messages.Messages', compact('Levels', 'messages'));
+        $id = Auth::guard(get_guard())->id;
+        $sentmessages = message::where('from', $id)->get();
+        $incomingmessages = message::where('to', $id)->get();
+        return view('pages.Messages.Messages', compact('sentmessages', 'incomingmessages'));
     }
 
     // insert new level to database
@@ -26,7 +35,7 @@ class messageController extends Controller
         try {
             $validated = $request->validated();
             $message = new message();
-            $message->from = $request->from;
+            $message->from = Auth::guard(get_guard())->id;
             $message->to = $request->to;
             $message->message = $request->message;
             $message->save();
@@ -72,7 +81,7 @@ class messageController extends Controller
     public function incoming($to)
     {
 
-        $messages = message::where('to', $to)->get();
+        $incomingmessages = message::where('to', $to)->get();
         return view('', compact('messages'));
     }
 }

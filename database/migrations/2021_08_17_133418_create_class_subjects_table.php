@@ -16,9 +16,9 @@ class CreateClassSubjectsTable extends Migration
         Schema::create('class_subjects', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('classes_id')->nullable();
-            $table->foreign('classes_id')->references('id')->on('classes');
+            $table->foreign('classes_id')->references('id')->on('classes')->onDelete('cascade');
             $table->unsignedInteger('subject_id')->nullable();
-            $table->foreign('subject_id')->references('id')->on('subjects');
+            $table->foreign('subject_id')->references('id')->on('subjects')->onDelete('cascade');
         });
     }
 

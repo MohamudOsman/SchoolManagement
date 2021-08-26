@@ -38,10 +38,22 @@
         <li class="nav-item border-bottom pb-2 pt-2">
      <a type="button" href="{{route('Subject.index')}}" class="btn btn-primary btn-block">
          Subject
-     </a>
+         </a>
+        </li>
+
+
+        <li class="nav-item border-bottom pb-2 pt-2">
+     <a type="button" href="{{route('Session.index')}}" class="btn btn-primary btn-block">
+         schedules
+         </a>
         </li>
 
         <li class="nav-item border-bottom pb-2 pt-2">
+     <a type="button" href="{{route('Teacher.index')}}" class="btn btn-primary btn-block">
+         Teacher
+         </a>
+        </li>
+    <!-- <li class="nav-item border-bottom pb-2 pt-2">
           <div class="dropdown">
             <button type="button" class="btn btn-primary btn-block dropdown-toggle" data-toggle="dropdown">
              Teacher
@@ -49,11 +61,9 @@
             <div class="dropdown-menu">
               <a class="dropdown-item" href="{{route('Teacher.index')}} " style="color:black">view teachers record  <i class="fa fa-user-plus ml-2"></i> </a>
             <a class="dropdown-item" href="{{url('assigning')}}" style="color:black">assigning  teachers to classes  <i class="fa fa-user-plus ml-2"></i> </a>
-
             </div>
           </div>
-        </li>
-
+        </li>-->
 
 
         <li class="nav-item border-bottom pb-2 pt-2">

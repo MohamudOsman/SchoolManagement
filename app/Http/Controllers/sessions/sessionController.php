@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\sessions;
 
 use App\Http\Requests\storeSession;
+use App\Models\classes;
 use App\Models\teacher;
-use app\Models\sections;
-use App\Models\subject;
+use App\Models\sections;
 use App\Models\session;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -15,11 +15,18 @@ class sessionController extends Controller
 
     public function index()
     {
-        $teachers = teacher::all();
-        $sections = sections::all();
-        return view('pages.schedules.schedules', compact('teachers', 'sections'));
+        $classes = classes::all();
+        return view('pages.schedules.schedules', compact('classes'));
     }
 
+    public function show($classes_id)
+    {
+        $class = classes::findOrFail($classes_id);
+        $sections = sections::where('class_id', $classes_id)->get();
+        $subjects = $class->subjects;
+        $teachers = $class->teachers;
+        return view('pages.schedules.create', compact('subjects', 'sections', 'teachers'));
+    }
 
     public function store(storeSession $request)
     {
@@ -43,7 +50,7 @@ class sessionController extends Controller
     {
         try {
             $validated = $request->validated();
-            $session = session::findOrFail($request->id);
+            $session = session::findorFail($request->id);
             $session->update([
                 $session->teacher_id = $request->teacher_id,
                 $session->subject_id = $request->subject_id,

@@ -6,14 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class homework extends Model
 {
-    protected $fillable = ['student_id', 'subject_id', 'classes_id', 'section_id', 'teacher_id', 'date', 'information'];
+    protected $fillable = ['subject_id', 'classes_id', 'section_id', 'teacher_id', 'date', 'information'];
     protected $table = 'homework';
 
 
-    public function student()
-    {
-        return $this->belongsTo('App\Models\student', 'student_id');
-    }
 
     public function subject()
     {

@@ -101,6 +101,10 @@
                                     <label for="title">student's date of birth </label>
                                     <input type="date" name="date_of_birth" class="form-control" required>
                                 </div>
+                                <div class="col">
+                                    <label for="title">year </label>
+                                    <input type="text" name="academic_year" class="form-control" required>
+                                </div>
                             </div>
                             <br>
 
