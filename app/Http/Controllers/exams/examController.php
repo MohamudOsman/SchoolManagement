@@ -22,6 +22,12 @@ class examController extends Controller
         return view('pages.Exams.Exams', compact('exams', 'classes', 'subjects'));
     }
 
+    public function show()
+    {
+        $exams = exam::all()->sortBy('name');
+        return view('pages.Exams.Show', compact('exams'));
+    }
+
     // insert new exams to database
 
     public function store(StoreExam $request)

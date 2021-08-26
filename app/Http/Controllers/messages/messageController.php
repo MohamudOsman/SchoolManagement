@@ -10,13 +10,6 @@ use Illuminate\Support\Facades\Auth;
 
 class messageController extends Controller
 {
-    public function __construct()
-    {
-
-       // $this->middleware(['AdminAuth:admin','TeacherAuth']);
-    }
-
-
     public function get_guard()
     {
         if (Auth::guard('admin')->check()) {
@@ -29,12 +22,7 @@ class messageController extends Controller
     public function index()
     {
 
-<<<<<<< HEAD
         $id = Auth::guard(get_guard())->id;
-=======
-          //      $id = Auth::guard($this->get_guard())->id;
->>>>>>> c961b44cb8853c89c8f32d18198ec165b4c107e4
-        $id = 1;
         $sentmessages = message::where('from', $id)->get();
         $incomingmessages = message::where('to', $id)->get();
         return view('pages.Messages.Messages', compact('sentmessages', 'incomingmessages'));
