@@ -55,7 +55,7 @@
             Staff
             </button>
             <div class="dropdown-menu">
-                   <a class="dropdown-item" href="{{route('Staff.index')}} " style="color:black">view staffs record  <i class="fa fa-user-plus ml-2"></i> </a>
+                   <a class="dropdown-item" href="{{route('Staff.index')}} " style="color:black">view staffs record  <i class="fa fa-eye ml-2"></i> </a>
             </div>
           </div>
         </li>
@@ -72,7 +72,7 @@
             Student
             </button>
             <div class="dropdown-menu">
-                   <a class="dropdown-item"  href="{{route('Student.index')}}"  style="color:black">view students record<i class="fa fa-user-plus ml-2"></i> </a>
+                   <a class="dropdown-item"  href="{{route('Student.index')}}"  style="color:black">view students record<i class="fa fa-eye ml-2"></i> </a>
             </div>
           </div>
         </li>
