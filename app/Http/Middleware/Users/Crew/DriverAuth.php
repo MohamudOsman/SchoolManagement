@@ -17,7 +17,7 @@ class DriverAuth
     {
         if(Auth::user()->type!=6)
         {
-            return back()->withInput();
+            return redirect()-> back()->withInput();
         }
 
         return $next($request);

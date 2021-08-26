@@ -17,7 +17,7 @@ class GuidedAuth
     {
         if(Auth::user()->type!=7)
         {
-            return back()->withInput();
+            return redirect()-> back()->withInput();
         }
 
         return $next($request);

@@ -17,7 +17,7 @@ class StudentAuth
     {
         if(Auth::user()->type!=4)
         {
-            return back()->withInput();
+            return redirect()-> back()->withInput();
         }
 
         return $next($request);

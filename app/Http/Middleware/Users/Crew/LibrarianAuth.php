@@ -17,7 +17,7 @@ class LibrarianAuth
     {
         if(Auth::user()->type!=8)
         {
-            return back()->withInput();
+            return redirect()-> back()->withInput();
         }
 
         return $next($request);

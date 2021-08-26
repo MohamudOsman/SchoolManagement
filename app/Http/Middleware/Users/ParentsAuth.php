@@ -17,7 +17,7 @@ class ParentsAuth
     {
         if(Auth::user()->type!=3)
         {
-            return back()->withInput();
+            return redirect()-> back()->withInput();
         }
 
         return $next($request);

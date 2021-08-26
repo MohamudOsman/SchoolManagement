@@ -17,7 +17,7 @@ class TeacherAuth
     {
         if(Auth::user()->type!=2)
         {
-            return back()->withInput();
+            return redirect()-> back()->withInput();
         }
         return $next($request);
     }

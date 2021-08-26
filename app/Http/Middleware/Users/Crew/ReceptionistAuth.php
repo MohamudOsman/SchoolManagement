@@ -17,7 +17,7 @@ class ReceptionistAuth
     {
         if(Auth::user()->type!=9)
         {
-            return back()->withInput();
+            return redirect()-> back()->withInput();
         }
 
         return $next($request);

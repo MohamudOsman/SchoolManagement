@@ -17,7 +17,7 @@ class AccountantAuth
     {
         if(Auth::user()->type!=5)
         {
-            return back()->withInput();
+            return redirect()-> back()->withInput();
         }
 
         return $next($request);
