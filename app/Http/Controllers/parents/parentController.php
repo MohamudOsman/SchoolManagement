@@ -8,7 +8,7 @@ use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-class teacherController extends Controller
+class parentController extends Controller
 {
 
     public function index()

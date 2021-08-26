@@ -30,7 +30,7 @@ class teacherController extends Controller
             $user->name = $request->name;
             $user->password = Hash::make($request->Password);
             $user->email = $request->email;
-            $user->user_type = 2;
+            $user->type = 2;
             $user->save();
 
 
