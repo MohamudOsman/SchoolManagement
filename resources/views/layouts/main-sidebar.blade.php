@@ -48,16 +48,14 @@
          </a>
         </li>
 
-<<<<<<< HEAD
         <li class="nav-item border-bottom pb-2 pt-2">
-     <a type="button" href="{{route('Teacher.index')}}" class="btn btn-primary btn-block">
+          <a type="button" href="{{route('Teacher.index')}}" class="btn btn-primary btn-block">
          Teacher
          </a>
         </li>
+
     <!-- <li class="nav-item border-bottom pb-2 pt-2">
-=======
         <li class="nav-item  pb-2 pt-2">
->>>>>>> 5fe359938cde828ebee18f38a4b2e42423517184
           <div class="dropdown">
             <button type="button" class="btn btn-primary btn-block dropdown-toggle " data-toggle="dropdown">
              Teacher
@@ -77,6 +75,7 @@
             </button>
             <div class="dropdown-menu">
                    <a class="dropdown-item" href="{{route('Staff.index')}} " style="color:black">view staffs record  <i class="fa fa-user-plus ml-2"></i> </a>
+
             </div>
           </div>
         </li>
@@ -88,19 +87,21 @@
             </button>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="{{route('Student.index')}}" style="color:black">view students record<i class="fa fa-user-plus ml-2"></i> </a>
+                 <a type="button" href="{{route('Promotion.index')}}" class="btn btn-primary btn-block  "> Promotion </a>
+              <a type="button" href="{{route('Attendance.index')}}" class="btn btn-primary btn-block  ">Attendance </a>
             </div>
           </div>
         </li>
 
 
         <li class="nav-item  pb-2 pt-2">
+           <a type="button" href="{{route('Promotion.index')}}" class="btn btn-primary btn-block  "> Promotion </a>
+              </li>
 
-          <a type="button" href="{{route('Exam.index')}}" class="btn btn-primary btn-block  ">
-            Exams
-        </a>
 
+        <li class="nav-item  pb-2 pt-2">
+        <a type="button" href="{{route('Exam.index')}}" class="btn btn-primary btn-block  ">Exams </a>
         </li>
-
 
         <li class="nav-item  pb-2 pt-2">
 
@@ -117,7 +118,7 @@
 
         </li>
 
-        
+
       </ul>
         </div>
     </div>

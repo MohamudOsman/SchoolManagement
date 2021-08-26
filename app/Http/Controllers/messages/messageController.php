@@ -22,13 +22,12 @@ class messageController extends Controller
     public function index()
     {
 
-        $id = Auth::guard(get_guard())->id;
+        //        $id = Auth::guard(get_guard())->id;
+        $id = 1;
         $sentmessages = message::where('from', $id)->get();
         $incomingmessages = message::where('to', $id)->get();
         return view('pages.Messages.Messages', compact('sentmessages', 'incomingmessages'));
     }
-
-    // insert new level to database
 
     public function store(storeMessage $request)
     {

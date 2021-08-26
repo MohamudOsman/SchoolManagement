@@ -71,12 +71,18 @@ Route::group(['namespace' => 'Staffs'], function () {
 Route::group(['namespace' => 'Students'], function () {
     Route::resource('Student', 'studentController');
     Route::resource('Attendance', 'AttendanceController');
+    Route::resource('Promotion', 'PromotionController');
 });
 
 
 
 Route::group(['namespace' => 'Exams'], function () {
     Route::resource('Exam', 'examController');
+});
+
+
+Route::group(['namespace' => 'sessions'], function () {
+    Route::resource('schedules', 'sessionController');
 });
 
 

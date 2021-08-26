@@ -19,7 +19,7 @@ class sessionController extends Controller
         return view('pages.schedules.schedules', compact('classes'));
     }
 
-    public function show($classes_id)
+    public function create($classes_id)
     {
         $class = classes::findOrFail($classes_id);
         $sections = sections::where('class_id', $classes_id)->get();
@@ -28,7 +28,7 @@ class sessionController extends Controller
         return view('pages.schedules.create', compact('subjects', 'sections', 'teachers'));
     }
 
-    public function store(storeSession $request)
+    public function store(Request $request)
     {
         try {
             $validated = $request->validated();

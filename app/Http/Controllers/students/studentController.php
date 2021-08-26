@@ -22,7 +22,13 @@ class studentController extends Controller
         $sections = sections::all();
         return view('pages.Student.Student', compact('students', 'classes', 'sections'));
     }
+    public function create()
+    {
 
+        $classes = classes::all();
+        $sections = sections::all();
+        return view('pages.Student.create', compact('classes', 'sections'));
+    }
 
 
     public function store(Request $request)
@@ -167,13 +173,5 @@ class studentController extends Controller
         } catch (\Exception $e) {
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
-    }
-
-    public function create()
-    {
-
-        $classes = classes::all();
-        $sections = sections::all();
-        return view('pages.Student.create', compact('classes', 'sections'));
     }
 }

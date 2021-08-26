@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Students;
 
 use App\Http\Controllers\Controller;
-use App\Models\level;
+use App\Models\classes;
 use App\Models\promotion;
+use App\Models\sections;
 use Illuminate\Http\Request;
 
 class PromotionController extends Controller
@@ -12,15 +13,17 @@ class PromotionController extends Controller
 
     public function index()
     {
-        $levels = level::all();
-        return view('pages.Students.promotion.index', compact('levels'));
+        $promotions = promotion::all();
+        $classes = classes::all();
+        return view('pages.Student.promotion.index', compact('promotions'));
     }
 
 
     public function create()
     {
-        $promotions = promotion::all();
-        return view('pages.Students.promotion.management', compact('promotions'));
+        $sections = sections::all();
+        $classes = classes::all();
+        return view('pages.Student.promotion.create', compact('sections', 'classes'));
     }
 
 
