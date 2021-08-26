@@ -5,7 +5,7 @@
         <div class="" style="height: max-content;" >
             <div class=" h4 text-center p-4 mt-2"
                  style="">
-                School Management System
+                School Management System <i class='fa fa-school'></i>
             </div>
         </div>
 
@@ -24,7 +24,8 @@
                 <!-- Authentication Links -->
                 @guest('admin')
                     <li class="nav-item btn btn-success">
-                        <a class="nav-link" href="{{ route('admin.login') }}">{{ __('Login') }}</a>
+                        <a class="nav-link" href="{{ route('admin.login') }}">{{ __('Login') }} <i class='fa fa-sign-in-alt'></i></a>
+                        
                     </li>
 
                 @else
