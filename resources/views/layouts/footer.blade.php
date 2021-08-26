@@ -8,8 +8,8 @@
         <!-- </div> -->
         <!-- <div class="col-md-10"> -->
           <ul class="text-center pt-4">
-            <li class="list-inline-item"><a href="#">Terms & Conditions </a> </li>
-            <li class="list-inline-item"><a href="#">API Use Policy </a> </li>
+            <li class="list-inline-item "><a href="#" >Terms & Conditions </a> </li>
+            <li class="list-inline-item"><a href="#">API Use Policy </a> </li> 
             <li class="list-inline-item"><a href="#">Privacy Policy </a> </li>
             <li class="nav-item btn-block mb-4">
             
