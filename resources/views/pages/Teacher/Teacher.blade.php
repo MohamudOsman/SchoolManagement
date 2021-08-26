@@ -20,7 +20,7 @@
     <!-- row -->
     <div class="row">
 
-        <div class="col-xl-10 mb-30">
+        <div class="col-xl-12 mb-30">
             <div class="card card-statistics h-100">
                 <div class="card-body">
 
@@ -134,7 +134,7 @@
 
         </div>
 
-
+    </div>
 
     <!-- row closed -->
 @endsection

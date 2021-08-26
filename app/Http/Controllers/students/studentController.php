@@ -15,6 +15,11 @@ class studentController extends Controller
 {
 
 
+    public function __construct()
+    {
+
+        $this->middleware('AdminAuth:admin');
+    }
     public function index()
     {
         $students = student::all();
@@ -22,7 +27,13 @@ class studentController extends Controller
         $sections = sections::all();
         return view('pages.Student.Student', compact('students', 'classes', 'sections'));
     }
+    public function create()
+    {
 
+        $classes = classes::all();
+        $sections = sections::all();
+        return view('pages.Student.create', compact('classes', 'sections'));
+    }
 
 
     public function store(Request $request)
@@ -37,14 +48,14 @@ class studentController extends Controller
             $user->name = $request->name;
             $user->password = Hash::make($request->student_Password);
             $user->email = $request->email;
-            $user->user_type = 4;
+            $user->type = 4;
             $user->save();
             //parent's account
             $parent_account = new  User();
             $parent_account->name = $request->father_name;
             $parent_account->password = Hash::make($request->parent_Password);
             $parent_account->email = $request->parent_email;
-            $parent_account->user_type = 3;
+            $parent_account->type = 3;
             $parent_account->save();
 
 
@@ -167,13 +178,5 @@ class studentController extends Controller
         } catch (\Exception $e) {
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
-    }
-
-    public function create()
-    {
-
-        $classes = classes::all();
-        $sections = sections::all();
-        return view('pages.Student.create', compact('classes', 'sections'));
     }
 }

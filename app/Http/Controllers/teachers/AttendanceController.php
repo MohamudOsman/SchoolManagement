@@ -3,14 +3,16 @@
 namespace App\Http\Controllers\Students;
 
 use App\Http\Controllers\Controller;
-use App\Repository\AttendanceRepositoryInterface;
-use Illuminate\Http\Request;
 use App\Models\teacher;
-use App\Models\student;
-use App\Models\teacher_attending;
 
 class AttendanceController extends Controller
 {
+
+    public function __construct()
+    {
+
+        $this->middleware(['AdminAuth:admin','GuidedAuth']);
+    }
 
     public function index()
     {

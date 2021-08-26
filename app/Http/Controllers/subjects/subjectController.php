@@ -12,6 +12,12 @@ use Illuminate\Http\Request;
 class subjectController extends Controller
 {
 
+    public function __construct()
+    {
+
+        $this->middleware('AdminAuth:admin');
+    }
+
     public function index()
     {
         $subjects = subject::all();

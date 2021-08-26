@@ -10,6 +10,13 @@ use App\Models\session;
 class AttendanceController extends Controller
 {
 
+    public function __construct()
+    {
+
+        $this->middleware(['AdminAuth:admin','TeacherAuth']);
+        $this->middleware(['StudentAuth','ParentsAuth'])->only('show');
+    }
+
     public function index()
     {
         $students = student::all();
@@ -45,4 +52,9 @@ class AttendanceController extends Controller
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
     }
+
+    public function show(){
+
+    }
+
 }

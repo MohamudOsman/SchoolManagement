@@ -15,6 +15,12 @@ use Illuminate\Support\Facades\Hash;
 class teacherController extends Controller
 {
 
+    public function __construct()
+    {
+
+        $this->middleware('AdminAuth:admin');
+    }
+
     public function index()
     {
         $teachers = teacher::all();
@@ -30,7 +36,7 @@ class teacherController extends Controller
             $user->name = $request->name;
             $user->password = Hash::make($request->Password);
             $user->email = $request->email;
-            $user->user_type = 2;
+            $user->type = 2;
             $user->save();
 
 
@@ -91,7 +97,6 @@ class teacherController extends Controller
         }
     }
 
-
     public function destroy(Request $request)
     {
 
@@ -143,6 +148,9 @@ class teacherController extends Controller
 
     public function searchBySection($id)
     {
+        $sections = sections::findOrFail($id);
+        $teachers = $sections->teachers;
+        return view('pages.Teacher.show', compact('teachers'));
     }
 
 

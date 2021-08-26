@@ -13,6 +13,13 @@ class examController extends Controller
 {
     // return all exams
 
+    public function __construct()
+    {
+
+        $this->middleware('AdminAuth:admin');
+        $this->middleware(['StudentAuth','ParentsAuth','TeacherAuth'])->only(['show','searchByClass']);
+    }
+
     public function index()
     {
 
@@ -20,6 +27,12 @@ class examController extends Controller
         $classes = classes::all()->sortBy('name');
         $subjects = subject::all()->sortBy('name');
         return view('pages.Exams.Exams', compact('exams', 'classes', 'subjects'));
+    }
+
+    public function show()
+    {
+        $exams = exam::all()->sortBy('name');
+        return view('pages.Exams.Show', compact('exams'));
     }
 
     // insert new exams to database

@@ -15,6 +15,13 @@ use Illuminate\Support\Facades\Hash;
 class staffController extends Controller
 {
 
+
+    public function __construct()
+    {
+
+        $this->middleware('AdminAuth:admin');
+    }
+
     public function index()
     {
         $staffs = staff::all()->sortBy('name');
@@ -29,9 +36,8 @@ class staffController extends Controller
             $user->name = $request->name;
             $user->password = Hash::make($request->Password);
             $user->email = $request->email;
-            $user->user_type = 5;
+            $user->type = 5;
             $user->save();
-
 
             $staff = new staff();
             $staff->name = $request->name;
