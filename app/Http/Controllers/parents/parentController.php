@@ -11,6 +11,12 @@ use Illuminate\Support\Facades\Hash;
 class parentController extends Controller
 {
 
+    public function __construct()
+    {
+
+        //$this->middleware('TeacherAuth')->except(['logout', 'showLoginForm', 'adminlogin']);
+    }
+
     public function index()
     {
         $parent = my_parent::all();

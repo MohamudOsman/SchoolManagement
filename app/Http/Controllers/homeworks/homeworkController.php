@@ -12,6 +12,13 @@ use Illuminate\Routing\Controller;
 
 class homeworkController extends Controller
 {
+
+    public function __construct()
+    {
+
+        //$this->middleware(['AdminAuth:admin','TeacherAuth']);
+    }
+
     public function index()
     {
         $subjects = subject::all()->sortBy('name');
