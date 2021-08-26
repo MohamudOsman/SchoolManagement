@@ -18,13 +18,9 @@
 
     <!--- Style css -->
     <link href="{{ URL::asset('assets/css/ltr.css') }}" rel="stylesheet">
+    
     <!-- Title -->
     <title>@yield("title")</title>
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-
 
 </head>
 

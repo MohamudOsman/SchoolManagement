@@ -3,23 +3,23 @@
 
     @include('layouts.head')
 
-        <body>
+        <body >
 
             @include('layouts.nav')
 
-            <div class="wrapper" style="font-family:'Cairo', 'sans-serif'">
+            <div class="row" style="font-family:'Cairo', 'sans-serif'">
 
                 <!--=================================preloader -->
 
                 @include('layouts.main-sidebar')
-                <div class="content-wrapper">
+                
                     @yield('page-header')
-                    <div class="page-title">
+                    <div class="page-title col-md-9 mb-30 mt-20" style="height: max-content;position:relative;">
                         @yield('content')
                         @include('layouts.footer')
                     </div>
                 </div>
-            </div>
+            
 
 
             @include('layouts.footer-scripts')
