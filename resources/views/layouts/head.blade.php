@@ -18,6 +18,7 @@
 
     <!--- Style css -->
     <link href="{{ URL::asset('assets/css/ltr.css') }}" rel="stylesheet">
+    
     <!-- Title -->
     <title>@yield("title")</title>
 

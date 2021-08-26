@@ -1,10 +1,10 @@
 
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+<nav class="navbar navbar-expand-md  bg-dark text-white shadow-sm border-bottom" style='background: linear-gradient(to right, #343A40 10% ,#6C757D 100%);'>
     <div class="container">
 
-        <div class="col-md-10 " style="height: max-content;" >
-            <div class="bg-dark text-light h4 text-center p-4 mt-2"
-                 style="border-bottom-left-radius:50% ;border-bottom-right-radius: 50%; ">
+        <div class="" style="height: max-content;" >
+            <div class=" h4 text-center p-4 mt-2"
+                 style="">
                 School Management System
             </div>
         </div>
@@ -23,7 +23,7 @@
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 @guest('admin')
-                    <li class="nav-item">
+                    <li class="nav-item btn btn-success">
                         <a class="nav-link" href="{{ route('admin.login') }}">{{ __('Login') }}</a>
                     </li>
 

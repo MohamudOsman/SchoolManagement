@@ -1,7 +1,7 @@
-<div class="container-fluid">
-    <div class="row">
+
+
         <!-- Left Sidebar start-->
-        <div class="side-menu-fixed">
+        <div class="col-md-3  pb-5 pt-3 " style='min-height: 100%;background: linear-gradient(to right, #343A40 10% ,#6C757D 100%); '>
             <div class="scrollbar side-menu-bg" >
          <ul class="nav navbar-nav side-menu" id="sidebarnav">
         <li class="nav-item h2 text-center text-white mt-3 mb-5 border-bottom pb-3 ">
@@ -9,7 +9,7 @@
             Admin
         </li>
 
-        <li class="nav-item border-bottom pb-2 pt-2">
+        <li class="nav-item  pb-2 pt-2">
 
           <a type="button" href="{{route('Levels.index')}}" class="btn btn-primary btn-block ">
             Levels
@@ -18,7 +18,7 @@
         </li>
 
 
-        <li class="nav-item border-bottom pb-2 pt-2">
+        <li class="nav-item  pb-2 pt-2">
 
           <a type="button" href="{{route('Class.index')}}" class="btn btn-primary btn-block ">
             Class
@@ -26,7 +26,7 @@
 
         </li>
 
-           <li class="nav-item border-bottom pb-2 pt-2">
+           <li class="nav-item  pb-2 pt-2">
 
           <a type="button" href="{{route('Section.index')}}" class="btn btn-primary btn-block ">
             Section
@@ -35,8 +35,8 @@
         </li>
 
 
-        <li class="nav-item border-bottom pb-2 pt-2">
-     <a type="button" href="{{route('Subject.index')}}" class="btn btn-primary btn-block">
+        <li class="nav-item  pb-2 pt-2">
+     <a type="button" href="{{route('Subject.index')}}" class="btn btn-primary btn-block ">
          Subject
          </a>
         </li>
@@ -48,14 +48,18 @@
          </a>
         </li>
 
+<<<<<<< HEAD
         <li class="nav-item border-bottom pb-2 pt-2">
      <a type="button" href="{{route('Teacher.index')}}" class="btn btn-primary btn-block">
          Teacher
          </a>
         </li>
     <!-- <li class="nav-item border-bottom pb-2 pt-2">
+=======
+        <li class="nav-item  pb-2 pt-2">
+>>>>>>> 5fe359938cde828ebee18f38a4b2e42423517184
           <div class="dropdown">
-            <button type="button" class="btn btn-primary btn-block dropdown-toggle" data-toggle="dropdown">
+            <button type="button" class="btn btn-primary btn-block dropdown-toggle " data-toggle="dropdown">
              Teacher
             </button>
             <div class="dropdown-menu">
@@ -66,9 +70,9 @@
         </li>-->
 
 
-        <li class="nav-item border-bottom pb-2 pt-2">
+        <li class="nav-item  pb-2 pt-2">
           <div class="dropdown">
-            <button type="button" class="btn btn-primary btn-block dropdown-toggle" data-toggle="dropdown">
+            <button type="button" class="btn btn-primary btn-block dropdown-toggle " data-toggle="dropdown">
             Staff
             </button>
             <div class="dropdown-menu">
@@ -77,9 +81,9 @@
           </div>
         </li>
 
-        <li class="nav-item border-bottom pb-2 pt-2">
+        <li class="nav-item  pb-2 pt-2">
           <div class="dropdown">
-            <button type="button" class="btn btn-primary btn-block dropdown-toggle" data-toggle="dropdown">
+            <button type="button" class="btn btn-primary btn-block dropdown-toggle " data-toggle="dropdown">
                 Student
             </button>
             <div class="dropdown-menu">
@@ -89,27 +93,35 @@
         </li>
 
 
-        <li class="nav-item border-bottom pb-2 pt-2">
+        <li class="nav-item  pb-2 pt-2">
 
-          <a type="button" href="{{route('Exam.index')}}" class="btn btn-primary btn-block ">
+          <a type="button" href="{{route('Exam.index')}}" class="btn btn-primary btn-block  ">
             Exams
         </a>
 
         </li>
 
 
-        <li class="nav-item border-bottom pb-2 pt-2">
+        <li class="nav-item  pb-2 pt-2">
 
-          <a type="button" href="{{route('Message.index')}}" class="btn btn-primary btn-block ">
+          <a type="button" href="{{route('Message.index')}}" class="btn btn-primary btn-block  ">
             Message
         </a>
 
         </li>
+
+
+        <li class="nav-item border-bottom pb-2 pt-2">
+
+          <a class="nav-link btn btn-danger btn-lg" href="#">Log out  <i class="fa fa-sign-out-alt"></i> </a>
+
+        </li>
+
+        
       </ul>
         </div>
     </div>
-</div>
-</div>
+
 <style>
   ::-webkit-scrollbar{
     width: 4px;
