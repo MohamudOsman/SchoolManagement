@@ -32,7 +32,7 @@
                         </div>
                     @endif
 
-                <form action="{{route('schedules.create','1')}}" method="post">  {{method_field('patch')}}
+                <form action="{{route('schedules.create','class_id')}}" method="post">  {{method_field('patch')}}
                     @csrf
                         <div class="row">
                             <div class="col">
@@ -53,7 +53,7 @@
                         <br>
 
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-success">go</button>
+                            <button type="submit" class="btn btn-success"> Go </button>
                         </div>
                 </form>
                 <br><br>

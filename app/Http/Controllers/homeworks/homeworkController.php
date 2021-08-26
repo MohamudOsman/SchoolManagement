@@ -17,7 +17,13 @@ class homeworkController extends Controller
         $subjects = subject::all()->sortBy('name');
         $classes = classes::all()->sortBy('name');
         $sections = sections::all()->sortBy('name');
-        return view('pages.Levels.Levels', compact('subjects', 'classes', 'sections'));
+        return view('pages.homework.homework', compact('subjects', 'classes', 'sections'));
+    }
+
+    public function show($section_id)
+    {
+        $homeworks = homework::where('section_id', $section_id)->get();
+        return view('pages.homework.show', compact('homeworks'));
     }
 
     public function store(StoreHomework $request)

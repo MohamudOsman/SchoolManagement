@@ -28,7 +28,7 @@ class sessionController extends Controller
         return view('pages.schedules.create', compact('subjects', 'sections', 'teachers'));
     }
 
-    public function store(Request $request)
+    public function store(storeSession $request)
     {
         try {
             $validated = $request->validated();
@@ -69,10 +69,15 @@ class sessionController extends Controller
         return redirect()->route('Sessions.index');
     }
 
+
     public function searchBySection($id)
     {
-        $sessions = session::where('section_id', $id)->get()->sortBy('day')->sortBy('number');
-        return view('', compact('sessions'));
+        $sessions1 = session::where('section_id', $id)->andwhere('day', 1)->get()->sortBy('number');
+        $sessions2 = session::where('section_id', $id)->andwhere('day', 2)->get()->sortBy('number');
+        $sessions3 = session::where('section_id', $id)->andwhere('day', 3)->get()->sortBy('number');
+        $sessions4 = session::where('section_id', $id)->andwhere('day', 4)->get()->sortBy('number');
+        $sessions5 = session::where('section_id', $id)->andwhere('day', 5)->get()->sortBy('number');
+        return view('pages.schedules.show', compact('sessions1', 'sessions2', 'sessions3', 'sessions4', 'sessions5'));
     }
 
     public function searchByTeacher($id)
@@ -83,6 +88,6 @@ class sessionController extends Controller
         $sessions4 = session::where('teacher_id', $id)->andwhere('day', 4)->get()->sortBy('number');
         $sessions5 = session::where('teacher_id', $id)->andwhere('day', 5)->get()->sortBy('number');
 
-        return view('', compact('sessions1', 'sessions2', 'sessions3', 'sessions4', 'sessions5'));
+        return view('pages.schedules.show', compact('sessions1', 'sessions2', 'sessions3', 'sessions4', 'sessions5'));
     }
 }

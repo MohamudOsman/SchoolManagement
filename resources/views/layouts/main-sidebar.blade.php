@@ -48,14 +48,8 @@
          </a>
         </li>
 
-<<<<<<< HEAD
-        <li class="nav-item border-bottom pb-2 pt-2">
-          <a type="button" href="{{route('Teacher.index')}}" class="btn btn-primary btn-block">
-=======
-<<<<<<< HEAD
-        <li class="nav-item  pb-2 pt-2">
      <a type="button" href="{{route('Teacher.index')}}" class="btn btn-primary btn-block">
->>>>>>> 8d94e7658954339ea5c77f4b104e90f96aeec033
+
          Teacher
          </a>
         </li>

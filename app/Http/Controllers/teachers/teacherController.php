@@ -143,6 +143,9 @@ class teacherController extends Controller
 
     public function searchBySection($id)
     {
+        $sections = sections::findOrFail($id);
+        $teachers = $sections->teachers;
+        return view('pages.Teacher.show', compact('teachers'));
     }
 
 

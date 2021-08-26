@@ -32,7 +32,6 @@ class staffController extends Controller
             $user->user_type = 5;
             $user->save();
 
-
             $staff = new staff();
             $staff->name = $request->name;
             $staff->phone = $request->phone;
