@@ -29,7 +29,7 @@ class staffController extends Controller
             $user->name = $request->name;
             $user->password = Hash::make($request->Password);
             $user->email = $request->email;
-            $user->user_type = 5;
+            $user->type = 5;
             $user->save();
 
             $staff = new staff();

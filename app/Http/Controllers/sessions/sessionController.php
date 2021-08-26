@@ -13,6 +13,13 @@ use Illuminate\Routing\Controller;
 class sessionController extends Controller
 {
 
+    public function __construct()
+    {
+
+       // searchBySection // $this->middleware(['StudentAuth']);
+        //$this->middleware(['AdminAuth:admin','StudentAuth']);
+    }
+
     public function index()
     {
         $classes = classes::all();

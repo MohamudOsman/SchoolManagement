@@ -15,6 +15,13 @@ use Illuminate\Support\Facades\Hash;
 class teacherController extends Controller
 {
 
+    public function __construct()
+    {
+
+        //$this->middleware(['AdminAuth:admin','TeacherAuth']);
+
+    }
+
     public function index()
     {
         $teachers = teacher::all();
@@ -30,7 +37,7 @@ class teacherController extends Controller
             $user->name = $request->name;
             $user->password = Hash::make($request->Password);
             $user->email = $request->email;
-            $user->user_type = 2;
+            $user->type = 2;
             $user->save();
 
 
@@ -90,7 +97,6 @@ class teacherController extends Controller
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
     }
-
 
     public function destroy(Request $request)
     {

@@ -8,8 +8,14 @@ use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-class teacherController extends Controller
+class parentController extends Controller
 {
+
+    public function __construct()
+    {
+
+        //$this->middleware('TeacherAuth')->except(['logout', 'showLoginForm', 'adminlogin']);
+    }
 
     public function index()
     {

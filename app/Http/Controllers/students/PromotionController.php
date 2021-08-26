@@ -11,6 +11,12 @@ use Illuminate\Http\Request;
 class PromotionController extends Controller
 {
 
+    public function __construct()
+    {
+
+        //$this->middleware('AdminAuth:admin');
+    }
+
     public function index()
     {
         $promotions = promotion::all();
