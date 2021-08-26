@@ -42,14 +42,14 @@
         </li>
 
 
-        <li class="nav-item border-bottom pb-2 pt-2">
+        <li class="nav-item  pb-2 pt-2">
      <a type="button" href="{{route('Session.index')}}" class="btn btn-primary btn-block">
          schedules
          </a>
         </li>
 
 <<<<<<< HEAD
-        <li class="nav-item border-bottom pb-2 pt-2">
+        <li class="nav-item  pb-2 pt-2">
      <a type="button" href="{{route('Teacher.index')}}" class="btn btn-primary btn-block">
          Teacher
          </a>
