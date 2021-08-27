@@ -17,7 +17,7 @@ class examController extends Controller
     {
 
         $this->middleware('AdminAuth:admin');
-        $this->middleware(['StudentAuth','ParentsAuth','TeacherAuth'])->only(['show','searchByClass']);
+        $this->middleware(['StudentAuth', 'ParentsAuth', 'TeacherAuth'])->only(['show', 'searchByClass']);
     }
 
     public function index()

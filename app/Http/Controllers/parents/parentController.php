@@ -14,7 +14,7 @@ class parentController extends Controller
     public function __construct()
     {
 
-        //$this->middleware('TeacherAuth')->except(['logout', 'showLoginForm', 'adminlogin']);
+        $this->middleware('TeacherAuth')->except(['logout', 'showLoginForm', 'adminlogin']);
     }
 
     public function index()

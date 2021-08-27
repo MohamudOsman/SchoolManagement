@@ -16,8 +16,7 @@ class homeworkController extends Controller
     public function __construct()
     {
 
-        $this->middleware('TeacherAuth');
-        $this->middleware(['StudentAuth','ParentsAuth'])->only('show');
+        $this->middleware(['AdminAuth:admin', 'TeacherAuth']);
     }
 
     public function index()

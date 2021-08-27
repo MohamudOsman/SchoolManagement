@@ -121,7 +121,7 @@ class studentController extends Controller
 
                 $user = User::findorfail($request->user_id);
                 $user->update([
-                    $user->password = $request->password,
+                    $user->password = Hash::make($request->password),
                 ]);
             }
 
@@ -129,7 +129,7 @@ class studentController extends Controller
 
                 $parent_user = User::findorfail($request->parent_user_id);
                 $parent_user->update([
-                    $user->password = $request->parent_Password,
+                    $user->password = Hash::make($request->parent_Password),
                 ]);
             }
             $parent = my_parent::findorfail($request->my_parent_id);
