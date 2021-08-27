@@ -18,7 +18,7 @@
     <!-- row -->
     <div class="row">
 
-        <div class="col-xl-12 mb-30">
+        <div class="col-xl-12 mb-30 mt-4">
             <div class="card card-statistics h-100">
                 <div class="card-body">
 
@@ -32,7 +32,7 @@
                         </div>
                     @endif
 
-                <a href="{{route('Student.create')}}" class="button x-small" role="button"
+                <a href="{{route('Student.create')}}" class="btn btn-success" role="button"
                                    aria-pressed="true">Add Student</a><br>
 
                     <br><br>
@@ -43,7 +43,7 @@
 
                     <div class="table-responsive">
                         <table class="table table-bordered">
-                            <thead class="bg-secondary">
+                            <thead class="bg-dark text-white">
                             <tr>
                                 <th> Student's Name </th>
                                 <th> father's name </th>
@@ -142,7 +142,7 @@
 
     </div>
 
-    </div>
+
 
 
     <!-- row closed -->
