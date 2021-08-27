@@ -81,7 +81,7 @@ class staffController extends Controller
 
             if (isset($request->password)) {
                 $user = User::findorfail($request->user_id);
-                $user->password = $request->password;
+                $user->password = Hash::make($request->Password);
             }
 
             return redirect()->route('Staff.index');

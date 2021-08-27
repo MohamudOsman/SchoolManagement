@@ -48,9 +48,27 @@
          </a>
         </li>
 
+      <li class="nav-item  pb-2 pt-2">
      <a type="button" href="{{route('Teacher.index')}}" class="btn btn-primary btn-block">
 
          Teacher
+         </a>
+        </li>
+
+
+
+      <li class="nav-item  pb-2 pt-2">
+     <a type="button" href="{{route('Staff.index')}}" class="btn btn-primary btn-block">
+
+         Staff
+         </a>
+        </li>
+
+
+
+     <li class="nav-item  pb-2 pt-2">
+     <a type="button" href="{{route('Student.index')}}" class="btn btn-primary btn-block">
+ Student
          </a>
         </li>
 
@@ -65,7 +83,7 @@
             <a class="dropdown-item" href="{{url('assigning')}}" style="color:black">assigning  teachers to classes  <i class="fa fa-user-plus ml-2"></i> </a>
             </div>
           </div>
-        </li>-->
+        </li>
 
 
         <li class="nav-item  pb-2 pt-2">
@@ -93,7 +111,7 @@
           </div>
         </li>
 
-
+   -->
         <li class="nav-item  pb-2 pt-2">
            <a type="button" href="{{route('Promotion.index')}}" class="btn btn-primary btn-block  "> Promotion </a>
               </li>
