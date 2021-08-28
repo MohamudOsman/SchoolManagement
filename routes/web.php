@@ -59,9 +59,9 @@ Route::group(['namespace' => 'Subjects'], function () {
     Route::resource('Subject', 'subjectController');
 });
 
-Route::group(['namespace' => 'Teachers'], function () {
+Route::group(['namespace' => 'teachers'], function () {
     Route::resource('Teacher', 'teacherController');
-    Route::get('assigning', 'teacherController@assigning');
+    Route::get('assigning', 'assigningController');
 });
 
 Route::group(['namespace' => 'Staffs'], function () {

@@ -32,13 +32,19 @@
                         </div>
                     @endif
 
-                <form action="{{route('schedules.create','class_id')}}" method="post">  {{method_field('patch')}}
+
+                <a href="{{route('schedules.create','1')}}" class="button x-small" role="button"
+                                   aria-pressed="true">Add Student</a><br>
+
+
+<!--
+                <form action="{{route('schedules.create','classes_id')}}" method="post">  {{method_field('patch')}}
                     @csrf
                         <div class="row">
                             <div class="col">
                                 <label for="Name"class="mr-sm-2">choose the class name to add schedules :</label>
                                     <div class="box">
-                                        <select class="fancyselect" name="class_id" required>
+                                        <select class="fancyselect" name="classes_id" required>
                                             <option value=""></option>
                                                 @foreach ($classes as $class)
                                                     <option value="{{ $class->id }}" >
@@ -58,9 +64,7 @@
                 </form>
                 <br><br>
 
-
-
-
+            -->
                 </div>
             </div>
 

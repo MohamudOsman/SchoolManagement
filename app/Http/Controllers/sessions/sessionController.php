@@ -26,13 +26,20 @@ class sessionController extends Controller
         return view('pages.schedules.schedules', compact('classes'));
     }
 
-    public function create($classes_id)
+    public function create(Request $request)
     {
-        $class = classes::findOrFail($classes_id);
-        $sections = sections::where('class_id', $classes_id)->get();
-        $subjects = $class->subjects;
-        $teachers = $class->teachers;
-        return view('pages.schedules.create', compact('subjects', 'sections', 'teachers'));
+        return
+            classes::where('id', $request)->get();
+        try {
+            $classes_id = $request;
+            $class = classes::findorfail($classes_id);
+            $sections = sections::where('class_id', $classes_id)->get();
+            $subjects = $class->subjects;
+            $teachers = $class->teachers;
+            return view('pages.schedules.create', compact('subjects', 'sections', 'teachers'));
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
     }
 
     public function store(storeSession $request)

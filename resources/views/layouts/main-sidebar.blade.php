@@ -72,7 +72,8 @@
          </a>
         </li>
 
-    <!-- <li class="nav-item border-bottom pb-2 pt-2">
+<!--
+    <li class="nav-item border-bottom pb-2 pt-2">
         <li class="nav-item  pb-2 pt-2">
           <div class="dropdown">
             <button type="button" class="btn btn-primary btn-block dropdown-toggle " data-toggle="dropdown">
@@ -84,7 +85,6 @@
             </div>
           </div>
         </li>
-
 
         <li class="nav-item  pb-2 pt-2">
           <div class="dropdown">
@@ -114,6 +114,12 @@
    -->
         <li class="nav-item  pb-2 pt-2">
            <a type="button" href="{{route('Promotion.index')}}" class="btn btn-primary btn-block  "> Promotion </a>
+              </li>
+
+
+
+        <li class="nav-item  pb-2 pt-2">
+           <a type="button" href="{{route('Attendance.index')}}" class="btn btn-primary btn-block  "> Attendance </a>
               </li>
 
 

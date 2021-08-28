@@ -104,31 +104,6 @@ class teacherController extends Controller
         return redirect()->route('Teacher.index');
     }
 
-    public function assigning()
-    {
-        $teachers = teacher::all();
-        $sections = sections::all();
-        $subjects = subject::all();
-        $classes = classes::all();
-        return view('pages.Teacher.Assigning', compact('teachers', 'sections', 'subjects', 'classes'));
-    }
-
-
-    public function save_assigning(Request $request)
-    {
-
-
-        try {
-            $teacher = teacher::findorfail($request->teacher_id);
-            $teacher->section()->attach($request->section_id);
-            $teacher->classes()->attach($request->classes_id);
-            $teacher->subject()->attach($request->subject_id);
-            return view('empty');
-        } catch (\Exception $e) {
-            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
-        }
-    }
-
 
 
     public function edit($id)

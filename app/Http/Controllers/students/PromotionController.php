@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\classes;
 use App\Models\promotion;
 use App\Models\sections;
+use App\Models\student;
 use Illuminate\Http\Request;
 
 class PromotionController extends Controller
@@ -35,8 +36,6 @@ class PromotionController extends Controller
 
     public function store(Request $request)
     {
-        DB::beginTransaction();
-
         try {
 
             $students = student::where('class_id', $request->class_id)->where('section_id', $request->section_id)->where('academic_year', $request->academic_year)->get();

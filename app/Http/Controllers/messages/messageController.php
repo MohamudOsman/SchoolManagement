@@ -4,6 +4,7 @@ namespace App\Http\Controllers\messages;
 
 use App\Http\Requests\storeMessage;
 use App\Models\message;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -35,7 +36,9 @@ class messageController extends Controller
             $validated = $request->validated();
             $message = new message();
             $message->from = Auth::guard(get_guard())->id;
-            $message->to = $request->to;
+            $name = $request->name;
+            $user = User::where('name', 'like', $name)->get();
+            $message->to = $user->id;
             $message->message = $request->message;
             $message->save();
             return redirect()->route('messages.index');
@@ -51,8 +54,6 @@ class messageController extends Controller
             $validated = $request->validated();
             $message = message::findOrFail($request->id);
             $message->update([
-                $message->from = $request->from,
-                $message->to = $request->to,
                 $message->message = $request->message,
             ]);
             return redirect()->route('messages.index');
