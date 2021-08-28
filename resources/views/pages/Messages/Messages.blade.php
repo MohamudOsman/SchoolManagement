@@ -32,7 +32,7 @@
                         </div>
                     @endif
 
-                    <button type="button" class="button x-small" data-toggle="modal" data-target="#exampleModal">
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
                       send
                     </button>
                     <br><br>
@@ -126,7 +126,7 @@
                     <h5> incoming messages </h5>
                     <div class="table-responsive">
                         <table class="table table-bordered">
-                            <thead class="bg-dark">
+                            <thead class="bg-dark text-white">
                             <tr>
                                 <th>Messages</th>
                                 <th> from</th>
