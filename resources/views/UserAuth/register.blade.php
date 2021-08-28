@@ -64,48 +64,78 @@
                         <div >
                             Chose Your Auth :
                         </div >
-                        <div class="form-check  text-center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="text-center">
+                        <div class="form-check-inline  text-center">
                             <label class="form-check-label" for="radio1">
                               <input type="radio" class="form-check-input" id="radio1" name="optradio" value="2" checked> Teacher
                             </label>
                           </div>
-                          <div class="form-check text-center mb-4">
+                          <div class="form-check-inline text-center ">
                             <label class="form-check-label" for="radio2">
                               <input type="radio" class="form-check-input" id="radio2" name="optradio" value="3">Parent
                             </label>
                           </div>
-                        <div class="form-check  text-center">
+                        <div class="form-check-inline  text-center">
                             <label class="form-check-label" for="radio1">
                                 <input type="radio" class="form-check-input" id="radio1" name="optradio" value="4" checked>Student
                             </label>
                         </div>
-                        <div class="form-check  text-center">
+                        <div class="form-check-inline  text-center">
                             <label class="form-check-label" for="radio1">
                                 <input type="radio" class="form-check-input" id="radio1" name="optradio" value="5" checked>Accountant
                             </label>
                         </div>
-                        <div class="form-check  text-center">
+                    </div>
+                    <div class="text-center mb-4 pl-2">
+                        <br>
+                        <div class="form-check-inline text-center ">
                             <label class="form-check-label" for="radio1">
                                 <input type="radio" class="form-check-input" id="radio1" name="optradio" value="6" checked>Driver
                             </label>
                         </div>
-                        <div class="form-check  text-center">
+                        <div class="form-check-inline  text-center">
                             <label class="form-check-label" for="radio1">
                                 <input type="radio" class="form-check-input" id="radio1" name="optradio" value="7" checked>Guided
                             </label>
                         </div>
-                        <div class="form-check  text-center">
+                        <div class="form-check-inline  text-center">
                             <label class="form-check-label" for="radio1">
                                 <input type="radio" class="form-check-input" id="radio1" name="optradio" value="8" checked>Librarian
                             </label>
                         </div>
-                        <div class="form-check  text-center">
+                        <div class="form-check-inline  text-center">
                             <label class="form-check-label" for="radio1">
                                 <input type="radio" class="form-check-input" id="radio1" name="optradio" value="9" checked>Receptionist
                             </label>
                         </div>
 
-
+                    </div>
 
 
 

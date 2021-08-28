@@ -24,7 +24,7 @@ class management extends Controller
     {
         $numberofstd = DB::table('students')->count();
         $numberofteacher = DB::table('teachers')->count();
-        $classes = classes::count();
+        $classes = DB::table('classes')->count();
         return view('pages.management.management', compact('numberofstd', 'numberofteacher', 'classes'));
     }
 }
