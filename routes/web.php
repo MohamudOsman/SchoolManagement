@@ -20,9 +20,13 @@ Route::get('/', function () {
 
 */
 Route::get('/', function () {
-    return view('emptytstd');
-});
+    return view('empty');
 
+});
+Route::get('/', function () {
+    return view('home');
+
+});
 
 Route::get("/app", function () {
     return view('layouts.app');

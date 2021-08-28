@@ -6,41 +6,17 @@
          <ul class="nav navbar-nav side-menu" id="sidebarnav">
         <li class="nav-item h2 text-center text-white mt-3 mb-5 border-bottom pb-3 ">
 
-            Parent <i class='fa fa-wrench'></i>
+            Staff <i class='fa fa-wrench'></i>
         </li>
 
         <li class="nav-item  pt-2">
 
           <a type="button" href="{{route('Levels.index')}}" class="btn btn-primary btn-block ">
-            marks
+            attend
         </a>
 
         </li>
 
-
-
-
-        <li class="nav-item pt-2">
-     <a type="button" href="{{route('Subject.index')}}" class="btn btn-primary btn-block ">
-         Subject
-         </a>
-        </li>
-
-
-        <li class="nav-item  pt-2">
-     <a type="button" href="{{route('Session.index')}}" class="btn btn-primary btn-block">
-         schedules <i class='fa fa-reply-all'></i>
-         </a>
-        </li>
-
-
-
-        <li class="nav-item  pt-2">
-
-
-
-        <a type="button" href="{{route('Exam.index')}}" class="btn btn-primary btn-block  ">Exams <i class='fa fa-newspaper'></i> </a>
-        </li>
 
 
         <li class="nav-item   pt-2">
