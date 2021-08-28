@@ -24,7 +24,7 @@ Route::get("/app", function () {
 
 Route::group(['namespace' => 'Auth'], function () {
 
-   // Route::get("/admin", "AdminAuthController@index")->name('admin.home');
+    // Route::get("/admin", "AdminAuthController@index")->name('admin.home');
     Route::get("/login", "UserAuthController@showLoginForm")->name('login');
     Route::post("/login", "UserAuthController@userlogin")->name('logins');
     Route::get('/logout', 'UserAuthController@logout')->name('logout');
@@ -69,7 +69,7 @@ Route::group(['namespace' => 'Subjects'], function () {
 
 Route::group(['namespace' => 'teachers'], function () {
     Route::resource('Teacher', 'teacherController');
-    Route::get('assigning', 'assigningController');
+    //Route::get('assigning', 'assigningController');
 });
 
 Route::group(['namespace' => 'Staffs'], function () {

@@ -12,7 +12,7 @@
         <li class="nav-item  pt-2">
 
           <a type="button" href="{{route('Levels.index')}}" class="btn btn-primary btn-block ">
-            Levels 
+            Levels
         </a>
 
         </li>
@@ -56,7 +56,7 @@
             </button>
             <div class="dropdown-menu">
                    <a class="dropdown-item" href="{{route('Staff.index')}} " style="color:black">view staffs record  <i class="fa fa-eye ml-2"></i> </a>
-                 
+
 
             </div>
           </div>
@@ -68,13 +68,9 @@
 
 
 
-<<<<<<< HEAD
-<!--
     <li class="nav-item border-bottom pb-2 pt-2">
         <li class="nav-item  pb-2 pt-2">
-=======
         <li class="nav-item pt-2">
->>>>>>> 3fa1c17983d5b565338eeccc870b760129afc599
           <div class="dropdown">
             <button type="button" class="btn btn-primary btn-block  dropdown-toggle " data-toggle="dropdown">
             Student
@@ -85,7 +81,6 @@
           </div>
         </li>
 
-<<<<<<< HEAD
         <li class="nav-item  pb-2 pt-2">
           <div class="dropdown">
             <button type="button" class="btn btn-primary btn-block dropdown-toggle " data-toggle="dropdown">
@@ -93,15 +88,12 @@
             </button>
             <div class="dropdown-menu">
                    <a class="dropdown-item" href="{{route('Staff.index')}} " style="color:black">view staffs record  <i class="fa fa-user-plus ml-2"></i> </a>
-=======
-
->>>>>>> 3fa1c17983d5b565338eeccc870b760129afc599
 
 
 
 
 
-<<<<<<< HEAD
+
 
         <li class="nav-item  pb-2 pt-2">
            <a type="button" href="{{route('Attendance.index')}}" class="btn btn-primary btn-block  "> Attendance </a>
@@ -111,11 +103,9 @@
         <li class="nav-item  pb-2 pt-2">
         <a type="button" href="{{route('Exam.index')}}" class="btn btn-primary btn-block  ">Exams </a>
         </li>
-=======
->>>>>>> 3fa1c17983d5b565338eeccc870b760129afc599
 
 
-      
+
 
 
 
@@ -142,7 +132,7 @@
         <li class="nav-item  pt-2">
 
 
-        
+
         <a type="button" href="{{route('Exam.index')}}" class="btn btn-primary btn-block  ">Exams <i class='fa fa-newspaper'></i> </a>
         </li>
 
@@ -159,8 +149,8 @@
         <li class="nav-item btn-block mb-4 mt-2 pt-1 border-top">
             <a class="nav-link btn btn-danger btn-lg" href="#">Log Out <i class="fa fa-sign-out-alt"></i> </a>
         </li>
-        
-        
+
+
       </ul>
         </div>
     </div>
