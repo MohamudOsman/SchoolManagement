@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\students;
 
 use App\Models\classes;
-use App\Models\User;
+use App\User;
 use App\Models\student;
 use App\Models\my_parent;
 use App\Models\sections;

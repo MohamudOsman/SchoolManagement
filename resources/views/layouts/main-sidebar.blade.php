@@ -97,7 +97,7 @@
 
 
         <li class="nav-item  pt-2">
-        <a type="button" href="{{route('Exam.index')}}" class="btn btn-primary btn-block  ">Exams </a>
+        <a type="button" href="{{route('promotion.index')}}" class="btn btn-primary btn-block  ">promotion </a>
         </li>
 
 

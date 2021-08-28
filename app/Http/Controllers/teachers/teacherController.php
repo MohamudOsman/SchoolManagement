@@ -4,7 +4,7 @@ namespace App\Http\Controllers\teachers;
 
 use App\Models\teacher;
 use App\Models\certificate;
-use App\Models\User;
+use App\User;
 use App\Models\subject;
 use App\Models\sections;
 use App\Models\classes;

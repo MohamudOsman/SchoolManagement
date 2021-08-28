@@ -14,12 +14,12 @@ use PHPUnit\TextUI\XmlConfiguration\Group;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('empty');
-});
-Route::get('/home', function () {
+});*/
+Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
 
 Route::get('/Teacher/home', function () {
