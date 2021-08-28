@@ -18,7 +18,7 @@
     <!-- row -->
     <div class="row">
 
-        <div class="col-xl-12 mb-30">
+        <div class="col-xl-12 mb-30 mt-4">
             <div class="card card-statistics h-100">
                 <div class="card-body">
 
@@ -42,7 +42,7 @@
                     <h5> sent messages</h5>
                     <div class="table-responsive">
                         <table class="table table-bordered">
-                            <thead class="bg-secondary">
+                            <thead class="bg-dark text-white">
                             <tr>
                                 <th>Messages</th>
                                 <th> to</th>
@@ -107,7 +107,7 @@
                                                     <br><br>
 
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary"
+                                                        <button type="button" class="btn btn-danger"
                                                                 data-dismiss="modal">Close</button>
                                                         <button type="submit"
                                                                 class="btn btn-success">Edit</button>
@@ -126,7 +126,7 @@
                     <h5> incoming messages </h5>
                     <div class="table-responsive">
                         <table class="table table-bordered">
-                            <thead class="bg-secondary">
+                            <thead class="bg-dark">
                             <tr>
                                 <th>Messages</th>
                                 <th> from</th>
@@ -217,7 +217,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title"
+                        <h5 style="font-family: 'Cairo', sans-serif;" class="btn btn-success"
                             id="exampleModalLabel">
                           Send Messages
                         </h5>
@@ -247,7 +247,7 @@
                             <br><br>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary"
+                        <button type="button" class="btn btn-danger"
                                 data-dismiss="modal">Close</button>
                         <button type="submit"
                                 class="btn btn-success">send</button>
