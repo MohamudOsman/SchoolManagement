@@ -25,7 +25,7 @@
                 @guest('admin')
                     <li class="nav-item ">
                         <a class="nav-link btn btn-success" href="{{ route('admin.login') }}">{{ __('Login') }} <i class='fa fa-sign-in-alt'></i></a>
-                        
+
                     </li>
 
                 @else
@@ -43,13 +43,13 @@
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('admin.register') }}">{{ __('New Admin') }}</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{ route('admin.postlogout') }}"
+                            <a class="dropdown-item" href="{{ route('admin.logouts') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
 
-                            <form id="logout-form" action="{{ route('admin.postlogout') }}" method="POST" style="display: none;">
+                            <form id="logout-form" action="{{ route('admin.logouts') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
                         </div>
