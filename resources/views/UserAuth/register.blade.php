@@ -61,6 +61,24 @@
                             </div>
                         </div>
 
+                        <div >
+                            Chose Your Auth :
+                        </div >
+                        <div class="form-check  text-center">
+                            <label class="form-check-label" for="radio1">
+                              <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>Option 1
+                            </label>
+                          </div>
+                          <div class="form-check text-center mb-4">
+                            <label class="form-check-label" for="radio2">
+                              <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Option 2
+                            </label>
+                          </div>
+
+
+
+
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
