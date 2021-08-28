@@ -13,7 +13,10 @@ class messageController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth'],['AdminAuth:admin']);
+        //$this->middleware(['auth'],['AdminAuth:admin']);
+        /*if(Auth::guest()->check()){
+            $this->middleware(['auth','AdminAuth:admin']);
+        }*/
     }
 
     public function get_guard()
