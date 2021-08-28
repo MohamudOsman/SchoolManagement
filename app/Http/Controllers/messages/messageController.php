@@ -13,16 +13,15 @@ class messageController extends Controller
 {
     public function __construct()
     {
-
-        $this->middleware(['auth','AdminAuth:admin']);
+        $this->middleware(['auth'],['AdminAuth:admin']);
     }
 
     public function get_guard()
     {
         if (Auth::guard('admin')->check()) {
             return 'admin';
-        } elseif (Auth::guard('user')->check()) {
-            return 'user';
+        } elseif (Auth::guard('web')->check()) {
+            return 'web';
         }
     }
 
