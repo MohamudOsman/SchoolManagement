@@ -119,10 +119,6 @@
         </li>
 
 
-        <li class="nav-item btn-block mb-4 mt-2 pt-1 border-top">
-            <a class="nav-link btn btn-danger btn-lg" href="#">Log Out <i class="fa fa-sign-out-alt"></i> </a>
-        </li>
-
 
       </ul>
         </div>
