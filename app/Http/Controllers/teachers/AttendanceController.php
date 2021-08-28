@@ -11,7 +11,7 @@ class AttendanceController extends Controller
     public function __construct()
     {
 
-        $this->middleware(['AdminAuth:admin', 'GuidedAuth']);
+        $this->middleware(['AdminAuth:admin','GuidedAuth']);
     }
 
     public function index()

@@ -5,7 +5,7 @@
         <div class="" style="height: max-content;" >
             <div class=" h4 text-center p-4 mt-2"
                  style="">
-                School Management System
+                School Management System <i class='fa fa-school'></i>
             </div>
         </div>
 
@@ -23,18 +23,19 @@
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 @guest('admin')
-                    <li class="nav-item btn btn-success">
-                        <a class="nav-link" href="{{ route('admin.login') }}">{{ __('Login') }}</a>
+                    <li class="nav-item ">
+                        <a class="nav-link btn btn-success" href="{{ route('admin.login') }}">{{ __('Login') }} <i class='fa fa-sign-in-alt'></i></a>
+
                     </li>
 
                 @else
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link btn btn-success" href="{{ route('admin.register') }}">{{ __('Register') }}</a>
                         </li>
                     @endif
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a id="navbarDropdown" class="nav-link btn btn-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
 
                             {{ Auth::guard('admin')->user()->name }} <span class="caret"></span>
                         </a>
@@ -42,13 +43,13 @@
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('admin.register') }}">{{ __('New Admin') }}</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{ route('admin.postlogout') }}"
+                            <a class="dropdown-item" href="{{ route('admin.logouts') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
 
-                            <form id="logout-form" action="{{ route('admin.postlogout') }}" method="POST" style="display: none;">
+                            <form id="logout-form" action="{{ route('admin.logouts') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
                         </div>

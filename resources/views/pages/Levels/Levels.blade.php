@@ -19,7 +19,7 @@
     <!-- row -->
     <div class="row">
 
-        <div class="col-xl-12 mb-30">
+        <div class="col-xl-12 mb-30 mt-4">
             <div class="card card-statistics h-100">
                 <div class="card-body">
 
@@ -33,7 +33,7 @@
                         </div>
                     @endif
 
-                    <button type="button" class="button x-small" data-toggle="modal" data-target="#exampleModal">
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
                         Add Level
                     </button>
                     <br><br>
@@ -43,7 +43,7 @@
 
                     <div class="table-responsive">
                         <table class="table table-bordered">
-                            <thead class="bg-secondary">
+                            <thead class="bg-dark text-white">
                             <tr>
                                 <th>Level name</th>
                                 <th>Note</th>
@@ -114,7 +114,7 @@
                                                     <br><br>
 
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary"
+                                                        <button type="button" class="btn btn-danger"
                                                                 data-dismiss="modal">Close</button>
                                                         <button type="submit"
                                                                 class="btn btn-success">Edit</button>
@@ -210,7 +210,7 @@
                             <br><br>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary"
+                        <button type="button" class="btn btn-danger"
                                 data-dismiss="modal">Close</button>
                         <button type="submit"
                                 class="btn btn-success">submit</button>

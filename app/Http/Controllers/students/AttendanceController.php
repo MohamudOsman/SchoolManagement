@@ -13,8 +13,8 @@ class AttendanceController extends Controller
     public function __construct()
     {
 
-        $this->middleware(['AdminAuth:admin', 'TeacherAuth']);
-        $this->middleware(['StudentAuth', 'ParentsAuth'])->only('show');
+        $this->middleware(['AdminAuth:admin','TeacherAuth']);
+        $this->middleware(['StudentAuth','ParentsAuth'])->only('show');
     }
 
     public function index()
@@ -53,7 +53,8 @@ class AttendanceController extends Controller
         }
     }
 
-    public function show()
-    {
+    public function show(){
+
     }
+
 }

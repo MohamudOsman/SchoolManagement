@@ -17,7 +17,7 @@
 @section('content')
     <!-- row -->
     <div class="row">
-        <div class="col-md-10 mb-30">
+        <div class="col-md-10 mb-30 mt-4">
             <div class="card card-statistics h-100">
                 <div class="card-body">
 

@@ -74,7 +74,7 @@ class teacherController extends Controller
             $teacher->date_of_birth = $request->date_of_birth;
             if (isset($request->password)) {
                 $user = User::findorfail($request->user_id);
-                $user->password = Hash::make($request->password);
+                $user->password = $request->password;
             }
 
 
@@ -126,5 +126,10 @@ class teacherController extends Controller
         $sections = sections::findOrFail($id);
         $teachers = $sections->teachers;
         return view('pages.Teacher.show', compact('teachers'));
+    }
+
+
+    public function searchByYear($id)
+    {
     }
 }

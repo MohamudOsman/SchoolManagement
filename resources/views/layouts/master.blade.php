@@ -3,7 +3,7 @@
 
     @include('layouts.head')
 
-        <body >
+        <body style="background: linear-gradient(to right, rgba(51, 2, 2, 0.698) 0% ,rgba(0, 0, 255, 0.37) 100%);">
 
             @include('layouts.nav')
 
