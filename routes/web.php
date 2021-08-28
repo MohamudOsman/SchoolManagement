@@ -105,6 +105,9 @@ Route::group(['namespace' => 'sessions'], function () {
 });
 
 
-Route::group(['namespace' => 'Messages'], function () {
+Route::group(['namespace' => 'Messages','middleware' => ['AdminAuth:admin']], function () {
+    Route::resource('Message', 'messageController');
+});
+Route::group(['namespace' => 'Messages','middleware' => ['auth']], function () {
     Route::resource('Message', 'messageController');
 });
