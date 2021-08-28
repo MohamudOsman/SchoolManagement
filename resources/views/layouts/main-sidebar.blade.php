@@ -55,13 +55,10 @@
             Staff
             </button>
             <div class="dropdown-menu">
-<<<<<<< HEAD
                    <a class="dropdown-item" href="{{route('Staff.index')}} " style="color:black">view staffs record  <i class="fa fa-eye ml-2"></i> </a>
 
 
-=======
                    <a class="dropdown-item" href="{{route('Staff.index')}} " style="color:black">view staffs record  <i class="fa fa-eye"></i></a>
->>>>>>> a273a2379d33922c85d68f99d246146defa7fbc4
             </div>
           </div>
         </li>
@@ -71,14 +68,11 @@
 
     <li class="nav-item   pt-2">
 
-<<<<<<< HEAD
 
 
     <li class="nav-item border-bottom pb-2 pt-2">
         <li class="nav-item  pb-2 pt-2">
         <li class="nav-item pt-2">
-=======
->>>>>>> a273a2379d33922c85d68f99d246146defa7fbc4
           <div class="dropdown">
             <button type="button" class="btn btn-primary btn-block  dropdown-toggle " data-toggle="dropdown">
             Student
@@ -87,7 +81,6 @@
                    <a class="dropdown-item"  href="{{route('Student.index')}}"  style="color:black">view students record<i class="fa fa-eye ml-2"></i> </a>
             </div>
           </div>
-<<<<<<< HEAD
         </li>
 
         <li class="nav-item  pb-2 pt-2">
@@ -114,21 +107,6 @@
         </li>
 
 
-
-
-
-
-
-
-
-
-
-=======
->>>>>>> a273a2379d33922c85d68f99d246146defa7fbc4
-
-
-
-    </li>
 
     <li class="nav-item   pt-2">
 
@@ -171,13 +149,10 @@
         </li>
 
 
-<<<<<<< HEAD
         <li class="nav-item btn-block mb-4 mt-2 pt-1 border-top">
             <a class="nav-link btn btn-danger btn-lg" href="#">Log Out <i class="fa fa-sign-out-alt"></i> </a>
         </li>
 
-=======
->>>>>>> a273a2379d33922c85d68f99d246146defa7fbc4
 
       </ul>
         </div>

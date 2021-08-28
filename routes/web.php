@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\grades\gradeController;
 use Illuminate\Support\Facades\Route;
+use PHPUnit\TextUI\XmlConfiguration\Group;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,15 +14,32 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-/*
-Route::get('/', function () {
-    return view('empty');
-});
 
-*/
-Route::get('/', function () {
+Route::get('/Teacher/home', function () {
+    return view('emptyteacher');
+})->name('Teacher.home');
+Route::get('/Parent/home', function () {
+    return view('emptyparent');
+})->name('Parent.home');
+Route::get('/Student/home', function () {
     return view('emptytstd');
-});
+})->name('Student.home');
+Route::get('/Accountant/home', function () {
+    return view('emptystaff');
+})->name('Accountant.home');
+Route::get('/Driver/home', function () {
+    return view('empty');
+})->name('Driver.home');
+Route::get('/Guided/home', function () {
+    return view('empty');
+})->name('Guided.home');
+Route::get('/Librarian/home', function () {
+    return view('empty');
+})->name('Librarian.home');
+Route::get('/Receptionist/home', function () {
+    return view('empty');
+})->name('Receptionist.home');
+
 
 
 Route::get("/app", function () {
@@ -106,9 +124,9 @@ Route::group(['namespace' => 'sessions'], function () {
 });
 
 
-Route::group(['namespace' => 'Messages','middleware' => ['AdminAuth:admin']], function () {
+Route::group(['namespace' => 'Messages', 'middleware' => ['AdminAuth:admin']], function () {
     Route::resource('Message', 'messageController');
 });
-Route::group(['namespace' => 'Messages','middleware' => ['auth']], function () {
+Route::group(['namespace' => 'Messages', 'middleware' => ['auth']], function () {
     Route::resource('Message', 'messageController');
 });
