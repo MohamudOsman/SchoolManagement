@@ -13,7 +13,7 @@
 
 
 
-    
+
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
@@ -27,14 +27,15 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
     <script src="{{ asset('js/jqurey.js') }}" defer></script>
-    <script src="{{ asset('js/bootstrap.js') }}" defer></script>
     <script src="{{ asset('js/popper.min.js') }}" defer></script>
+    <script src="{{ asset('js/bootstrap.js') }}" defer></script>
+
 
 
 </head>
 <body style="background: linear-gradient(to right, rgba(51, 2, 2, 0.698) 0% ,rgba(0, 0, 255, 0.37) 100%);">
     <div id="app" >
-      
+
 
         <main class="py-4">
             @yield('content')

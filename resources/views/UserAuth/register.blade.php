@@ -61,6 +61,54 @@
                             </div>
                         </div>
 
+                        <div >
+                            Chose Your Auth :
+                        </div >
+                        <div class="form-check  text-center">
+                            <label class="form-check-label" for="radio1">
+                              <input type="radio" class="form-check-input" id="radio1" name="optradio" value="2" checked> Teacher
+                            </label>
+                          </div>
+                          <div class="form-check text-center mb-4">
+                            <label class="form-check-label" for="radio2">
+                              <input type="radio" class="form-check-input" id="radio2" name="optradio" value="3">Parent
+                            </label>
+                          </div>
+                        <div class="form-check  text-center">
+                            <label class="form-check-label" for="radio1">
+                                <input type="radio" class="form-check-input" id="radio1" name="optradio" value="4" checked>Student
+                            </label>
+                        </div>
+                        <div class="form-check  text-center">
+                            <label class="form-check-label" for="radio1">
+                                <input type="radio" class="form-check-input" id="radio1" name="optradio" value="5" checked>Accountant
+                            </label>
+                        </div>
+                        <div class="form-check  text-center">
+                            <label class="form-check-label" for="radio1">
+                                <input type="radio" class="form-check-input" id="radio1" name="optradio" value="6" checked>Driver
+                            </label>
+                        </div>
+                        <div class="form-check  text-center">
+                            <label class="form-check-label" for="radio1">
+                                <input type="radio" class="form-check-input" id="radio1" name="optradio" value="7" checked>Guided
+                            </label>
+                        </div>
+                        <div class="form-check  text-center">
+                            <label class="form-check-label" for="radio1">
+                                <input type="radio" class="form-check-input" id="radio1" name="optradio" value="8" checked>Librarian
+                            </label>
+                        </div>
+                        <div class="form-check  text-center">
+                            <label class="form-check-label" for="radio1">
+                                <input type="radio" class="form-check-input" id="radio1" name="optradio" value="9" checked>Receptionist
+                            </label>
+                        </div>
+
+
+
+
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

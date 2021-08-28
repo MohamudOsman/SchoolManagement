@@ -27,7 +27,23 @@ class UserRegisterController extends Controller
 
         $request['password'] = Hash::make($request->password);
         User::create($request->all());
-
-        return redirect()->intended(route('app'));
+        if($request->optradio==2){
+            return redirect()->intended(route('Teacher.home'));
+        }else if($request->optradio==3){
+            return redirect()->intended(route('Parent.home'));
+        }else if($request->optradio==4){
+            return redirect()->intended(route('Student.home'));
+        }else if($request->optradio==5){
+            return redirect()->intended(route('Accountant.home'));
+        }else if($request->optradio==6){
+            return redirect()->intended(route('Driver.home'));
+        }else if($request->optradio==7){
+            return redirect()->intended(route('Guided.home'));
+        }else if($request->optradio==8){
+            return redirect()->intended(route('Librarian.home'));
+        }else if($request->optradio==9){
+            return redirect()->intended(route('Receptionist.home'));
+        }
+        return redirect()->intended(route('home'));
     }
 }
