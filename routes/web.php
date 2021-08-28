@@ -70,6 +70,7 @@ Route::group(['namespace' => 'Subjects'], function () {
 Route::group(['namespace' => 'teachers'], function () {
     Route::resource('Teacher', 'teacherController');
     //Route::get('assigning', 'assigningController');
+    // Route::get('assigning', 'assigningController');
 });
 
 Route::group(['namespace' => 'Staffs'], function () {

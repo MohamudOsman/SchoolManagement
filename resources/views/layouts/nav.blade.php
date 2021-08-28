@@ -23,21 +23,30 @@
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 @guest('admin')
-                    <li class="nav-item ">
-                        <a class="nav-link btn btn-success" href="{{ route('admin.login') }}">{{ __('Login') }} <i class='fa fa-sign-in-alt'></i></a>
+                    @guest('web')
+                        <li class="nav-item ">
+                            <a class="nav-link btn btn-success" href="{{ route('admin.login') }}">{{ __('Login') }} <i class='fa fa-sign-in-alt'></i></a>
 
-                    </li>
-
-                @else
-                    @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link btn btn-success" href="{{ route('admin.register') }}">{{ __('Register') }}</a>
                         </li>
-                    @endif
+                        @else
+
+
+                            <a id="navbarDropdown" class="nav-link btn btn-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                @auth('web')
+                                    {{ Auth::guard('web')->user()->name }} <span class="caret"></span>
+                                @endauth
+                            </a>
+
+
+                    @endguest
+                @else
+
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link btn btn-success dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-
+                        @auth('admin')
                             {{ Auth::guard('admin')->user()->name }} <span class="caret"></span>
+                            @endauth
+
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

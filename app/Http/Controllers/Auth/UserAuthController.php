@@ -38,7 +38,7 @@ class UserAuthController extends Controller
     {
 
         if (Auth::guard()->check()) {
-            return redirect()->guest(route('home'));
+            return redirect()->guest(route('app'));
         }
 
         return view('UserAuth\login');

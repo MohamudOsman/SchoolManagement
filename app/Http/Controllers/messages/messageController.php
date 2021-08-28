@@ -14,7 +14,7 @@ class messageController extends Controller
     public function __construct()
     {
 
-        $this->middleware(['auth','AdminAuth:admin']);
+        $this->middleware(['auth', 'AdminAuth:admin']);
     }
 
     public function get_guard()
@@ -29,9 +29,9 @@ class messageController extends Controller
     public function index()
     {
 
-        //$id = Auth::guard($this->get_guard())->id;
-        $sentmessages = message::where('from', $id)->get();
-        $incomingmessages = message::where('to', $id)->get();
+        $id = Auth::guard($this->get_guard())->id();
+        $sentmessages = message::where('from', $id)->get('*');
+        $incomingmessages = message::where('to', $id)->get('*');
         return view('pages.Messages.Messages', compact('sentmessages', 'incomingmessages'));
     }
 
@@ -40,9 +40,9 @@ class messageController extends Controller
         try {
             $validated = $request->validated();
             $message = new message();
-            $message->from = Auth::guard(get_guard())->id;
+            $message->from = Auth::guard($this->get_guard())->id();
             $name = $request->name;
-            $user = User::where('name', 'like', $name)->get();
+            $user = User::where('name', 'like', $name)->get('*');
             $message->to = $user->id;
             $message->message = $request->message;
             $message->save();
@@ -78,7 +78,7 @@ class messageController extends Controller
 
     public function sent($from)
     {
-        $messages = message::where('from', $from)->get();
+        $messages = message::where('from', $from)->get('*');
         return view('', compact('messages'));
     }
 
@@ -86,7 +86,7 @@ class messageController extends Controller
     public function incoming($to)
     {
 
-        $incomingmessages = message::where('to', $to)->get();
+        $incomingmessages = message::where('to', $to)->get('*');
         return view('', compact('messages'));
     }
 }
