@@ -29,7 +29,7 @@ class messageController extends Controller
     public function index()
     {
 
-        //$id = Auth::guard($this->get_guard())->id;
+        $id = Auth::guard($this->get_guard())->id();
         $sentmessages = message::where('from', $id)->get();
         $incomingmessages = message::where('to', $id)->get();
         return view('pages.Messages.Messages', compact('sentmessages', 'incomingmessages'));
@@ -40,7 +40,7 @@ class messageController extends Controller
         try {
             $validated = $request->validated();
             $message = new message();
-            $message->from = Auth::guard(get_guard())->id;
+            $message->from = Auth::guard($this->get_guard())->id();
             $name = $request->name;
             $user = User::where('name', 'like', $name)->get();
             $message->to = $user->id;
