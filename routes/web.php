@@ -13,10 +13,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
     return view('empty');
 });
+
+*/
+Route::get('/', function () {
+    return view('emptytstd');
+});
+
 
 Route::get("/app", function () {
     return view('layouts.app');
@@ -53,6 +59,11 @@ Route::group(['namespace' => 'Levels'], function () {
 
 Route::group(['namespace' => 'Classes'], function () {
     Route::resource('Class', 'classController');
+});
+
+
+Route::group(['namespace' => 'homeworks'], function () {
+    Route::resource('homework', 'homeworkController');
 });
 
 Route::group(['namespace' => 'Sections'], function () {
