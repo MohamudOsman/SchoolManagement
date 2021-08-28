@@ -17,7 +17,7 @@ class sessionController extends Controller
     {
 
         $this->middleware('AdminAuth:admin');
-        $this->middleware(['StudentAuth','ParentsAuth','TeacherAuth'])->only(['searchBySection','searchByTeacher']);
+        $this->middleware(['StudentAuth', 'ParentsAuth', 'TeacherAuth'])->only(['searchBySection', 'searchByTeacher']);
     }
 
     public function index()
@@ -28,12 +28,10 @@ class sessionController extends Controller
 
     public function create(Request $request)
     {
-        return
-            classes::where('id', $request)->get();
         try {
             $classes_id = $request;
             $class = classes::findorfail($classes_id);
-            $sections = sections::where('class_id', $classes_id)->get();
+            $sections = sections::where('class_id', $classes_id)->get('*');
             $subjects = $class->subjects;
             $teachers = $class->teachers;
             return view('pages.schedules.create', compact('subjects', 'sections', 'teachers'));
@@ -86,21 +84,21 @@ class sessionController extends Controller
 
     public function searchBySection($id)
     {
-        $sessions1 = session::where('section_id', $id)->andwhere('day', 1)->get()->sortBy('number');
-        $sessions2 = session::where('section_id', $id)->andwhere('day', 2)->get()->sortBy('number');
-        $sessions3 = session::where('section_id', $id)->andwhere('day', 3)->get()->sortBy('number');
-        $sessions4 = session::where('section_id', $id)->andwhere('day', 4)->get()->sortBy('number');
-        $sessions5 = session::where('section_id', $id)->andwhere('day', 5)->get()->sortBy('number');
+        $sessions1 = session::where('section_id', $id)->where('day', 1)->get('*')->sortBy('number');
+        $sessions2 = session::where('section_id', $id)->where('day', 2)->get('*')->sortBy('number');
+        $sessions3 = session::where('section_id', $id)->where('day', 3)->get('*')->sortBy('number');
+        $sessions4 = session::where('section_id', $id)->where('day', 4)->get('*')->sortBy('number');
+        $sessions5 = session::where('section_id', $id)->where('day', 5)->get('*')->sortBy('number');
         return view('pages.schedules.show', compact('sessions1', 'sessions2', 'sessions3', 'sessions4', 'sessions5'));
     }
 
     public function searchByTeacher($id)
     {
-        $sessions1 = session::where('teacher_id', $id)->andwhere('day', 1)->get()->sortBy('number');
-        $sessions2 = session::where('teacher_id', $id)->andwhere('day', 2)->get()->sortBy('number');
-        $sessions3 = session::where('teacher_id', $id)->andwhere('day', 3)->get()->sortBy('number');
-        $sessions4 = session::where('teacher_id', $id)->andwhere('day', 4)->get()->sortBy('number');
-        $sessions5 = session::where('teacher_id', $id)->andwhere('day', 5)->get()->sortBy('number');
+        $sessions1 = session::where('teacher_id', $id)->where('day', 1)->get('*')->sortBy('number');
+        $sessions2 = session::where('teacher_id', $id)->where('day', 2)->get('*')->sortBy('number');
+        $sessions3 = session::where('teacher_id', $id)->where('day', 3)->get('*')->sortBy('number');
+        $sessions4 = session::where('teacher_id', $id)->where('day', 4)->get('*')->sortBy('number');
+        $sessions5 = session::where('teacher_id', $id)->where('day', 5)->get('*')->sortBy('number');
 
         return view('pages.schedules.show', compact('sessions1', 'sessions2', 'sessions3', 'sessions4', 'sessions5'));
     }

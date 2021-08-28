@@ -17,7 +17,7 @@ class homeworkController extends Controller
     {
 
         $this->middleware('TeacherAuth');
-        $this->middleware(['StudentAuth','ParentsAuth'])->only('show');
+        $this->middleware(['StudentAuth', 'ParentsAuth'])->only('show');
     }
 
     public function index()
@@ -30,7 +30,7 @@ class homeworkController extends Controller
 
     public function show($section_id)
     {
-        $homeworks = homework::where('section_id', $section_id)->get();
+        $homeworks = homework::where('section_id', $section_id)->get('*');
         return view('pages.homework.show', compact('homeworks'));
     }
 

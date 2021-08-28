@@ -17,7 +17,7 @@ class examController extends Controller
     {
 
         $this->middleware('AdminAuth:admin');
-        $this->middleware(['StudentAuth','ParentsAuth','TeacherAuth'])->only(['show','searchByClass']);
+        $this->middleware(['StudentAuth', 'ParentsAuth', 'TeacherAuth'])->only(['show', 'searchByClass']);
     }
 
     public function index()
@@ -84,7 +84,7 @@ class examController extends Controller
 
     public function searchByClass($id)
     {
-        $exams = exam::where('classes_id', $id)->get();
+        $exams = exam::where('classes_id', $id)->get('*');
         $classes = classes::all()->sortBy('name');
         $subjects = subject::all()->sortBy('name');
         return view('pages.Exams.Exams', compact('exams', 'classes', 'subjects'));
