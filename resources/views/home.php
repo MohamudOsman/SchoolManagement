@@ -71,7 +71,7 @@
 
           <div class="carousel-item active">
 
-            <img src="{{ asset('img/wander-fleur-k45cNuVX_RE-unsplash.jpg') }}" width="100%"  style="height: 80vh;">
+            <img src="img/wander-fleur-k45cNuVX_RE-unsplash.jpg" width="100%"  style="height: 80vh;">
             <div class="carousel-caption">
               <h3>school mangement</h3>
               <p>for good future </p>
